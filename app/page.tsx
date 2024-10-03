@@ -1,125 +1,108 @@
 import Image from "next/image";
+export default function Restaurant() {
+    return (
+        <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
+            {/* Sidebar */}
+            <div className="absolute top-0 left-0 w-1/4 h-full pt-10">
+                <aside className="sticky top-0 left-0 w-100 h-screen bg-black bg-opacity-90 p-4 z-10 flex flex-col justify-center items-center">
+                    <Image
+                        src="/image/logo.png"
+                        alt="sidebar-logo"
+                        width={150} // Set the width here
+                        height={150} // Set the height here
+                        className="rounded-lg shadow-lg"
+                    />
+                    <nav className="flex flex-col gap-4 text-center">
+                        <div className="relative group">
+                            <div className="absolute inset-x-1 mx-1 top-1/3 bg-red-500 transform scale-x-0 transition-transform duration-50 ease-in-out group-hover:scale-x-100 origin-left h-1/2 rounded"/>
+                            <a href="#section1" className="relative z-10 text-blue-500 py-2 px-4">Welcome</a>
+                        </div>
+                        <div className="relative group">
+                            <div className="absolute inset-x-1 mx-1 top-1/3 bg-red-500 transform scale-x-0 transition-transform duration-50 ease-in-out group-hover:scale-x-100 origin-left h-1/2 rounded"/>
+                            <a href="#section2" className="text-blue-500 hover:underline">About Us</a>
+                        </div>
+                        <div className="relative group">
+                            <div className="absolute inset-x-1 mx-1 top-1/3 bg-red-500 transform scale-x-0 transition-transform duration-50 ease-in-out group-hover:scale-x-100 origin-left h-1/2 rounded"/>
+                            <a href="#section3" className="text-blue-500 hover:underline">Photo Gallery</a>
+                        </div>
+                        <div className="relative group">
+                            <div className="absolute inset-x-1 mx-1 top-1/3 bg-red-500 transform scale-x-0 transition-transform duration-50 ease-in-out group-hover:scale-x-100 origin-left h-1/2 rounded"/>
+                            <a href="#section4" className="text-blue-500 hover:underline">Food Menu</a>
+                        </div>
+                        <div className="relative group">
+                            <div className="absolute inset-x-1 mx-1 top-1/3 bg-red-500 transform scale-x-0 transition-transform duration-50 ease-in-out group-hover:scale-x-100 origin-left h-1/2 rounded"/>
+                            <a href="#section5" className="text-blue-500 hover:underline">Contact Us</a>
+                        </div>
+                    </nav>
+                </aside>
 
-export default function Home() {
-  return (
-      <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
-        {/* Sticky Sidebar */}
-        <aside className="sticky top-0 left-0 mt-[10vh] h-screen w-1/4 bg-orange-800 p-4">
-          <nav className="flex flex-col gap-4">
-            <a href="#section1" className="text-blue-500 hover:underline">Section 1</a>
-            <a href="#section2" className="text-blue-500 hover:underline">Section 2</a>
-            <a href="#section3" className="text-blue-500 hover:underline">Section 3</a>
-            <a href="#section1" className="text-blue-500 hover:underline">Section 1</a>
-            <a href="#section2" className="text-blue-500 hover:underline">Section 2</a>
-            <a href="#section3" className="text-blue-500 hover:underline">Section 3</a>
-            <a href="#section1" className="text-blue-500 hover:underline">Section 1</a>
-            <a href="#section2" className="text-blue-500 hover:underline">Section 2</a>
-            <a href="#section3" className="text-blue-500 hover:underline">Section 3</a>
-            <a href="#section1" className="text-blue-500 hover:underline">Section 1</a>
-            <a href="#section2" className="text-blue-500 hover:underline">Section 2</a>
-            <a href="#section3" className="text-blue-500 hover:underline">Section 3</a>
-            <a href="#section1" className="text-blue-500 hover:underline">Section 1</a>
-            <a href="#section2" className="text-blue-500 hover:underline">Section 2</a>
-            <a href="#section3" className="text-blue-500 hover:underline">Section 3</a>
-          </nav>
-        </aside>
-
-        {/* Main content */}
-        <div className="ml-64 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16">
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            <Image
-                className="dark:invert"
-                src="https://nextjs.org/icons/next.svg"
-                alt="Next.js logo"
-                width={180}
-                height={38}
-                priority
-            />
-            <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-              <li className="mb-2">
-                Get started by editing{" "}
-                <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                  app/page.tsx
-                </code>
-                .
-              </li>
-              <li>Save and see your changes instantly.</li>
-            </ol>
-
-            <div className="flex gap-4 items-center flex-col sm:flex-row">
-              <a
-                  className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-                  href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                <Image
-                    className="dark:invert"
-                    src="https://nextjs.org/icons/vercel.svg"
-                    alt="Vercel logomark"
-                    width={20}
-                    height={20}
-                />
-                Deploy now
-              </a>
-              <a
-                  className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-                  href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                Read our docs
-              </a>
             </div>
-          </main>
-          <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <Image
-                  aria-hidden
-                  src="https://nextjs.org/icons/file.svg"
-                  alt="File icon"
-                  width={16}
-                  height={16}
-              />
-              Learn
-            </a>
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <Image
-                  aria-hidden
-                  src="https://nextjs.org/icons/window.svg"
-                  alt="Window icon"
-                  width={16}
-                  height={16}
-              />
-              Examples
-            </a>
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <Image
-                  aria-hidden
-                  src="https://nextjs.org/icons/globe.svg"
-                  alt="Globe icon"
-                  width={16}
-                  height={16}
-              />
-              Go to nextjs.org →
-            </a>
-          </footer>
+            {/* Hero Section with Background Image */}
+
+            <section className="relative h-screen bg-[url('/image/background.jpg')] bg-cover bg-center">
+
+
+                {/* Content Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center text-white z-0">
+                    <div className="text-center">
+                        <h1 className="text-6xl font-bold">Welcome to Our Restaurant</h1>
+                        <p className="mt-4 text-lg">Fine dining experience like never before.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* About Section */}
+            <section id="about" className="p-16 bg-white text-center">
+                <h2 className="text-4xl font-bold mb-4">About Us</h2>
+                <p className="text-lg text-gray-700">
+                    We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
+                </p>
+            </section>
+
+            {/* Menu Section */}
+            <section id="menu" className="p-16 bg-gray-50 text-center">
+                <h2 className="text-4xl font-bold mb-8">Our Menu</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="bg-white p-6 shadow-md rounded-lg">
+                        <h3 className="text-xl font-semibold">Grilled Salmon</h3>
+                        <p className="text-gray-600 mt-2">$25</p>
+                    </div>
+                    <div className="bg-white p-6 shadow-md rounded-lg">
+                        <h3 className="text-xl font-semibold">Pasta Primavera</h3>
+                        <p className="text-gray-600 mt-2">$20</p>
+                    </div>
+                    <div className="bg-white p-6 shadow-md rounded-lg">
+                        <h3 className="text-xl font-semibold">Steak Au Poivre</h3>
+                        <p className="text-gray-600 mt-2">$30</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section id="testimonials" className="p-16 bg-white text-center">
+                <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <p className="text-gray-700 italic">"The food was absolutely amazing! Can't wait to return."</p>
+                        <p className="text-sm text-gray-500 mt-4">- John Doe</p>
+                    </div>
+                    <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <p className="text-gray-700 italic">"Best dining experience we've had in a long time."</p>
+                        <p className="text-sm text-gray-500 mt-4">- Jane Smith</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Online Order Section */}
+            <section id="order" className="p-16 bg-gray-50 text-center">
+                <h2 className="text-4xl font-bold mb-8">Order Online</h2>
+                <a
+                    href="/order"
+                    className="bg-orange-600 text-white py-3 px-8 rounded-full text-lg hover:bg-orange-700 transition"
+                >
+                    Start Your Order
+                </a>
+            </section>
         </div>
-      </div>
-  );
+    );
 }
