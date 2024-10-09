@@ -1,6 +1,15 @@
+'use client';
+
 import Image from "next/image";
+import SimpleImageSlider from "react-simple-image-slider";
 
 //unsplash pictures
+
+const images = [
+    {url : '/image/homeBg2.jpg'},
+    {url : '/image/homeBg5.jpg'},
+    {url : '/image/homeBg6.jpg'},
+]
 
 export default function Restaurant() {
     return (
@@ -69,17 +78,28 @@ export default function Restaurant() {
             </div>
             {/* Hero Section with Background Image */ }
 
-            <section className="relative h-screen bg-[url('/image/homeBg5.jpg')] bg-cover bg-center">
+            <SimpleImageSlider
+                width={window.innerWidth}
+                height={window.innerHeight}
+                images={images}
+                showBullets={true}
+                showNavs={true}
+                slideDuration={1}
+                loop={true}
+                autoPlay={true}
+                autoPlayDelay={8}
+            />
+            {/*<section className="relative h-screen bg-[url('/image/homeBg5.jpg')] bg-cover bg-center">*/}
 
 
-                {/* Content Overlay */ }
-                {/*<div className="absolute inset-0 flex items-center justify-center text-white z-0">*/}
-                {/*    <div className="text-center">*/}
-                {/*        <h1 className="text-6xl font-bold">Welcome to Our Restaurant</h1>*/}
-                {/*        <p className="mt-4 text-lg">Fine dining experience like never before.</p>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-            </section>
+            {/*    /!* Content Overlay */ }*/}
+            {/*    /!*<div className="absolute inset-0 flex items-center justify-center text-white z-0">*!/*/}
+            {/*    /!*    <div className="text-center">*!/*/}
+            {/*    /!*        <h1 className="text-6xl font-bold">Welcome to Our Restaurant</h1>*!/*/}
+            {/*    /!*        <p className="mt-4 text-lg">Fine dining experience like never before.</p>*!/*/}
+            {/*    /!*    </div>*!/*/}
+            {/*    /!*</div>*!/*/}
+            {/*</section>*/}
 
             {/* About Section */ }
             <section id="about" className="p-16 bg-white text-center">
