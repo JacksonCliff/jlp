@@ -2,7 +2,11 @@ import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import {navSections} from "../Constant/UIDatas";
 
-const SectionText = ({text,activeSection,textSectionId}) => {
+const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
+    const handleScroll = () => {
+        console.log(sectionRef,"<===== Check Ref")
+        sectionRef.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <div className="relative group flex justify-center items-center">
             {
@@ -18,7 +22,7 @@ const SectionText = ({text,activeSection,textSectionId}) => {
                     </div>
             }
             <div className="relative  z-1">
-                <a href={text} className="text-white-500">{text}</a>
+                <button onClick={handleScroll} className="text-white-500">{text}</button>
             </div>
         </div>
     )
@@ -62,13 +66,14 @@ function SideNavBar({sectionRefs}) {
                         className="rounded-full-lg shadow-lg"
                     />
                     <nav className="flex flex-col gap-4 text-center">
-                        {navSections.map(nav => {
+                        {navSections.map((nav,index) => {
                             return(
                                 <SectionText
                                     key={nav.sectionId}
                                     text={nav.section}
                                     activeSection={activeSection}
                                     textSectionId={nav.sectionId}
+                                    sectionRef={sectionRefs.current[index]}
                                 />
                             )
                         })}

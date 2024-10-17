@@ -17,13 +17,21 @@ const images = [
 export default function Restaurant() {
 
     const sectionRefs = useRef([]);
+    const [areRefsReady, setRefsReady] = useState(false);
+
+    useEffect(() => {
+        // When the sections are mounted, mark the refs as ready
+        if (sectionRefs.current.length === navSections.length) {
+            setRefsReady(true);
+        }
+    }, []);
 
     return (
         <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
-            <SideNavBar sectionRefs={sectionRefs}/>
+            {areRefsReady && <SideNavBar sectionRefs={sectionRefs} />}
             {/* Hero Section with Background Image */ }
 
-            <section id={navSections[0].sectionId} ref={(el) => (sectionRefs.current.push(el))}>
+            <section id={navSections[0].sectionId} ref={(el) => (sectionRefs.current[0] = el)}>
                 <SimpleImageSlider
                     width={window.innerWidth}
                     height={window.innerHeight}
@@ -40,7 +48,7 @@ export default function Restaurant() {
 
 
             {/* About Section */ }
-            <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current.push(el))} className="p-16 bg-white h-screen text-center">
+            <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="p-16 bg-white h-screen text-center">
                 <h2 className="text-4xl font-bold mb-4">About Us</h2>
                 <p className="text-lg text-gray-700">
                     We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
@@ -48,7 +56,7 @@ export default function Restaurant() {
             </section>
 
             {/* Menu Section */ }
-            <section id={navSections[2].sectionId} ref={(el) => (sectionRefs.current.push(el))} className="p-16 bg-gray-50 text-center">
+            <section id={navSections[2].sectionId} ref={(el) => (sectionRefs.current[2] = el)} className="p-16 bg-gray-50 text-center">
                 <h2 className="text-4xl font-bold mb-8">Our Menu</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-white p-6 shadow-md rounded-full-lg">
@@ -67,7 +75,7 @@ export default function Restaurant() {
             </section>
 
             {/* Testimonials Section */ }
-            <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current.push(el))} className="p-16 bg-white text-center">
+            <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current[3] = el)} className="p-16 bg-white text-center">
                 <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
@@ -82,7 +90,7 @@ export default function Restaurant() {
             </section>
 
             {/* Online Order Section */ }
-            <section id={navSections[4].sectionId} ref={(el) => (sectionRefs.current.push(el))} className="p-16 bg-gray-50 text-center mb-100">
+            <section id={navSections[4].sectionId} ref={(el) => (sectionRefs.current[4] = el)} className="p-16 bg-gray-50 text-center mb-100">
                 <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
