@@ -1,43 +1,18 @@
 'use client';
 
 import Image from "next/image";
-import SimpleImageSlider from "react-simple-image-slider";
 import {useEffect, useRef, useState} from "react";
 import SideNavBar from "../components/SideNavBar";
 import {navSections} from "../Constant/UIDatas";
+import CustomSlider from "../components/CustomSlider";
 
-//unsplash pictures
-
-const images = [
-    {url : '/image/homeBg2.webp'},
-    {url : '/image/homeBg5.webp'},
-    {url : '/image/homeBg6.webp'},
-]
 
 export default function Restaurant() {
 
     const sectionRefs = useRef([]);
     const [areRefsReady, setRefsReady] = useState(false);
 
-    const [sliderDimensions, setSliderDimensions] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-    });
 
-    useEffect(() => {
-        const handleResize = () => {
-            setSliderDimensions({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     useEffect(() => {
         // When the sections are mounted, mark the refs as ready
@@ -52,18 +27,7 @@ export default function Restaurant() {
             {/* Hero Section with Background Image */ }
 
             <section id={navSections[0].sectionId} ref={(el) => (sectionRefs.current[0] = el)}>
-                <SimpleImageSlider
-                    width={sliderDimensions.width}
-                    height={sliderDimensions.height}
-                    images={images}
-                    showBullets={true}
-                    showNavs={true}
-                    slideDuration={1}
-                    loop={true}
-                    autoPlay={true}
-                    autoPlayDelay={8}
-
-                />
+                <CustomSlider/>
             </section>
 
 
