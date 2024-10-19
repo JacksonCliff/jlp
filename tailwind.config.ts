@@ -13,6 +13,10 @@ const config: Config = {
         foreground: "var(--foreground)",
         customRed: '#b80b0b',
       },
+      inset: {
+        '112': '28rem',
+        '136': '34rem'
+      },
     },
   },
   plugins: [],

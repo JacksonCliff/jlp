@@ -12,7 +12,10 @@
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
-    "react-simple-image-slider": "^2.4.1"
+    "react-parallax-tilt": "^1.7.247",
+    "react-simple-image-slider": "^2.4.1",
+    "react-slideshow-image": "^4.3.2",
+    "react-tilt": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

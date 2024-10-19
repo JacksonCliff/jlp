@@ -1,50 +1,44 @@
-import React, {useEffect, useState} from 'react';
-import SimpleImageSlider from "react-simple-image-slider";
-
+import React from 'react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
 //unsplash pictures
 
-const images = [
-    {url : '/image/homeBg2.webp'},
-    {url : '/image/homeBg5.webp'},
-    {url : '/image/homeBg6.webp'},
-]
 
-function CustomSlider(props) {
 
-    const [sliderDimensions, setSliderDimensions] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-    });
+const CustomSlider = () => {
+    const images = [
+        {url : '/image/homeBg3.webp'},
+        {url : '/image/homeBg5.webp'},
+        {url : '/image/homeBg.webp'},
+    ]
 
-    useEffect(() => {
-        const handleResize = () => {
-            setSliderDimensions({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
     return (
-        <SimpleImageSlider
-            width={sliderDimensions.width}
-            height={sliderDimensions.height}
-            images={images}
-            showBullets={true}
-            showNavs={true}
-            slideDuration={1}
-            loop={true}
-            autoPlay={true}
-            autoPlayDelay={8}
-
-        />
+        <Slide
+            autoplay={true}
+            arrows={false}
+            infinite={true}
+            pauseOnHover={false}
+            canSwipe={true}
+            indicators={() => <div className="indicator"><div className="indicator-dot"/></div>}
+            duration={8000}
+        >
+            <div className="each-slide-effect">
+                <div className="bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-screen">
+                </div>
+            </div>
+            <div className="each-slide-effect">
+                <div className="bg-[url('/image/homeBg5.webp')] bg-cover bg-center h-screen">
+                </div>
+            </div>
+            <div className="each-slide-effect">
+                <div className="bg-[url('/image/homeBg7.webp')] bg-cover bg-center h-screen">
+                </div>
+            </div>
+        </Slide>
     );
-}
+};
+
+
 
 export default CustomSlider;

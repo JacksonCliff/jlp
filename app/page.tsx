@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import SideNavBar from "../components/SideNavBar";
 import {navSections} from "../Constant/UIDatas";
 import CustomSlider from "../components/CustomSlider";
-
+import Tilt from 'react-parallax-tilt';
 
 export default function Restaurant() {
 
@@ -44,14 +44,18 @@ export default function Restaurant() {
                             Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
                         </p>
                     </div>
-                    <div className="relative w-1/2 h-[35vh] md:h-[45vh] lg:h-[60vh]"> {/* Responsive height */}
+                    <Tilt
+                        tiltMaxAngleX={10}
+                        tiltMaxAngleY={10}
+                        className="relative w-1/2 h-[35vh] md:h-[45vh] lg:h-[65vh]"
+                    >
                         <Image
-                            src="/image/homebg7.webp"
+                            src="/image/chef-1.jpg"
                             alt="about-logo"
                             fill={true}
-                            className="object-cover"
+                            className="object-cover rounded"
                         />
-                    </div>
+                    </Tilt>
                 </div>
             </section>
 
