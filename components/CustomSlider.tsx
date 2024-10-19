@@ -10,7 +10,7 @@ const CustomSlider = () => {
     const images = [
         {url : '/image/homeBg3.webp'},
         {url : '/image/homeBg5.webp'},
-        {url : '/image/homeBg.webp'},
+        {url : '/image/homeBg7.webp'},
     ]
 
     return (
@@ -23,18 +23,17 @@ const CustomSlider = () => {
             indicators={() => <div className="indicator"><div className="indicator-dot"/></div>}
             duration={8000}
         >
-            <div className="each-slide-effect">
-                <div className="bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-screen">
-                </div>
-            </div>
-            <div className="each-slide-effect">
-                <div className="bg-[url('/image/homeBg5.webp')] bg-cover bg-center h-screen">
-                </div>
-            </div>
-            <div className="each-slide-effect">
-                <div className="bg-[url('/image/homeBg7.webp')] bg-cover bg-center h-screen">
-                </div>
-            </div>
+            {images.map((item,index) => {
+                return (
+                    <div key={ index + 1 } className="each-slide-effect">
+                        <div
+                            className="bg-cover bg-center h-screen"
+                            style={{ backgroundImage: `url(${item.url})` }}
+                        />
+                    </div>
+                )
+            })}
+
         </Slide>
     );
 };
