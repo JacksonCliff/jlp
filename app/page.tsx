@@ -31,7 +31,6 @@ export default function Restaurant() {
                 <CustomSlider/>
             </section>
 
-            <ProgressBar/>
 
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="pl-[25%] bg-white h-screen text-center">
@@ -40,10 +39,15 @@ export default function Restaurant() {
                     We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
                 </p>
                 <div className="flex flex-row justify-between items-center bg-red p-16">
-                    <div className="w-1/2">
+                    <div className="w-1/2 p-10">
                         <p>
                             Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
                         </p>
+
+                        <ProgressBar score={50}/>
+                        <ProgressBar score={90}/>
+                        <ProgressBar score={20}/>
+
                     </div>
                     <Tilt
                         tiltMaxAngleX={10}

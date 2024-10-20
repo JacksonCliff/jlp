@@ -50,3 +50,14 @@ body {
   color: #fff;
   background: white;
 }
+
+.progress-text {
+  font-size: small;
+}
+
+.progress-bar {
+  transform: translateZ(0);
+}
+.progress-indicator {
+  transform: translate3d(0, 0, 0);
+}
