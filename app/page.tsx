@@ -6,6 +6,7 @@ import SideNavBar from "../components/SideNavBar";
 import {navSections} from "../Constant/UIDatas";
 import CustomSlider from "../components/CustomSlider";
 import Tilt from 'react-parallax-tilt';
+import ProgressBar from "../components/ProgressBar";
 
 export default function Restaurant() {
 
@@ -30,7 +31,7 @@ export default function Restaurant() {
                 <CustomSlider/>
             </section>
 
-
+            <ProgressBar/>
 
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="pl-[25%] bg-white h-screen text-center">

@@ -1,17 +1,9 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-
-//unsplash pictures
-
-
+import {sliderImages} from "../Constant/UIDatas";
 
 const CustomSlider = () => {
-    const images = [
-        {url : '/image/homeBg3.webp'},
-        {url : '/image/homeBg5.webp'},
-        {url : '/image/homeBg7.webp'},
-    ]
 
     return (
         <Slide
@@ -23,7 +15,7 @@ const CustomSlider = () => {
             indicators={() => <div className="indicator"><div className="indicator-dot"/></div>}
             duration={8000}
         >
-            {images.map((item,index) => {
+            {sliderImages.map((item,index) => {
                 return (
                     <div key={ index + 1 } className="each-slide-effect">
                         <div
