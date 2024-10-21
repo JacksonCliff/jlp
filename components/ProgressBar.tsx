@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import LabeledIcon from "./LabeledIcon";
 
-export default function ProgressBar({ score = 100 }) {
+export default function ProgressBar({score=100,iconName,label,color,txColor}) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
@@ -26,7 +26,13 @@ export default function ProgressBar({ score = 100 }) {
 
     return (
         <div className="w-full flex flex-col items-center mt-10">
-            <LabeledIcon color={"forestgreen"} txColor={"forestgreen"} className="mb-2"/>
+            <LabeledIcon
+                iconName={iconName}
+                color={color}
+                txColor={txColor}
+                label={label}
+                className="mb-2"
+            />
             {/* Progress Bar Container */}
             <div className="w-full max-w-lg h-2 bg-gray-200 rounded relative">
                 {/* Progress Bar */}

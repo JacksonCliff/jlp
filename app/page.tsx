@@ -8,6 +8,7 @@ import CustomSlider from "../components/CustomSlider";
 import Tilt from 'react-parallax-tilt';
 import ProgressBar from "../components/ProgressBar";
 import LabeledIcon from "../components/LabeledIcon";
+import MansoryGallery from "../components/MansoryGallery";
 
 export default function Restaurant() {
 
@@ -44,9 +45,9 @@ export default function Restaurant() {
                             Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
                         </p>
 
-                        <ProgressBar score={50}/>
-                        {/*<ProgressBar score={90}/>*/}
-                        {/*<ProgressBar score={20}/>*/}
+                        <ProgressBar score={90} iconName={"FaCheck"} label={"Food Quality"}/>
+                        <ProgressBar score={77} iconName={"FaClock"} label={"Delivery Time"}/>
+                        <ProgressBar score={86} iconName={"FaThumbsUp"} label={"Guest Satisfaction"}/>
 
                     </div>
                     <Tilt
@@ -65,24 +66,9 @@ export default function Restaurant() {
             </section>
 
             {/* Menu Section */ }
-            <section id={navSections[2].sectionId} ref={(el) => (sectionRefs.current[2] = el)} className="p-16 bg-gray-50 pl-[25%] text-center">
-                <h2 className="text-4xl font-bold mb-8">Our Menu</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="bg-white p-6 shadow-md rounded-full-lg">
-                        <h3 className="text-xl font-semibold">Grilled Salmon</h3>
-                        <p className="text-gray-600 mt-2">$25</p>
-                    </div>
-                    <div className="bg-white p-6 shadow-md rounded-full-lg">
-                        <h3 className="text-xl font-semibold">Pasta Primavera</h3>
-                        <p className="text-gray-600 mt-2">$20</p>
-                    </div>
-                    <div className="bg-white p-6 shadow-md rounded-full-lg">
-                        <h3 className="text-xl font-semibold">Steak Au Poivre</h3>
-                        <p className="text-gray-600 mt-2">$30</p>
-                    </div>
-                </div>
+            <section id={navSections[2].sectionId} ref={(el) => (sectionRefs.current[2] = el)} className="pl-[30%] pr-[5%] bg-gray-50 text-center mt-20">
+                <MansoryGallery/>
             </section>
-
             {/* Testimonials Section */ }
             <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current[3] = el)} className="p-16 bg-white pl-[25%] text-center">
                 <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
