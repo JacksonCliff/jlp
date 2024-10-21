@@ -7,6 +7,7 @@ import {navSections} from "../Constant/UIDatas";
 import CustomSlider from "../components/CustomSlider";
 import Tilt from 'react-parallax-tilt';
 import ProgressBar from "../components/ProgressBar";
+import LabeledIcon from "../components/LabeledIcon";
 
 export default function Restaurant() {
 
@@ -31,7 +32,6 @@ export default function Restaurant() {
                 <CustomSlider/>
             </section>
 
-
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="pl-[25%] bg-white h-screen text-center">
                 <h2 className="text-4xl font-bold mb-4">About Us</h2>
@@ -45,8 +45,8 @@ export default function Restaurant() {
                         </p>
 
                         <ProgressBar score={50}/>
-                        <ProgressBar score={90}/>
-                        <ProgressBar score={20}/>
+                        {/*<ProgressBar score={90}/>*/}
+                        {/*<ProgressBar score={20}/>*/}
 
                     </div>
                     <Tilt
