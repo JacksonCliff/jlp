@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { FaSearchengin } from "react-icons/fa6";
 
 const Checkmark = ({ selected }) => (
     <div
@@ -40,6 +41,7 @@ const cont = {
     position: "relative"
 };
 
+
 const SelectedImage = ({
                            index,
                            photo,
@@ -50,10 +52,18 @@ const SelectedImage = ({
                            selected
                        }) => {
     const [isSelected, setIsSelected] = useState(selected);
-    // calculate x,y scale
+
     const sx = (100 - (30 / photo.width) * 100) / 100;
     const sy = (100 - (30 / photo.height) * 100) / 100;
-    selectedImgStyle.transform = `translateZ(0px) scale3d(${sx}, ${sy}, 1)`;
+    const selectedImgStyle = {
+        transform: `translateZ(0px) scale3d(${sx}, ${sy}, 1)`,
+    };
+
+    const cont = {
+        position: "relative",
+        left: direction ? left : undefined,
+        top: direction ? top : undefined,
+    };
 
     if (direction === "column") {
         cont.position = "absolute";
@@ -65,34 +75,37 @@ const SelectedImage = ({
         cont.top = top;
     }
 
-    const handleOnClick = e => {
+    const handleOnClick = (e) => {
         setIsSelected(!isSelected);
     };
 
     useEffect(() => {
         setIsSelected(selected);
-        console.log(direction,"<======== Check")
     }, [selected]);
 
     return (
         <div
             style={{ margin, height: photo.height, width: photo.width, ...cont }}
-            className={!isSelected ? "not-selected" : ""}
+            className="relative flex justify-center items-center"
         >
-            <Checkmark selected={isSelected ? true : false} />
-            <Image
-                alt={photo.title}
-                style={
-                    isSelected ? { ...imgStyle, ...selectedImgStyle } : { ...imgStyle }
-                }
-                src={photo.src}
-                width={photo.width}
-                height={photo.height}
-                onClick={handleOnClick}
-            />
-            <style>{`.not-selected:hover{filter: blur(4px)}`}</style>
+            {/* Blurred Image */}
+            <div className="relative group">
+                <Image
+                    alt={photo.title}
+                    src={photo.src}
+                    width={photo.width}
+                    height={photo.height}
+                    onClick={handleOnClick}
+                    className="group-hover:blur-sm transition-all duration-300"
+                />
+                {/* Search Icon (Appears on hover, but remains unblurred) */}
+                <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 hidden-searchIcon">
+                    <FaSearchengin color={"white"} size={25} />
+                </div>
+            </div>
         </div>
     );
 };
 
 export default SelectedImage;
+
