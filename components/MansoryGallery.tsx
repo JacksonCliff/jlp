@@ -1,5 +1,7 @@
 import  Gallery  from 'react-photo-gallery'
 import clsx from "clsx";
+import SelectedImage from "./SelectedImage";
+import {useCallback, useState} from "react";
 
 export const photos = [
     {
@@ -24,7 +26,7 @@ export const photos = [
     },
     {
         src: "/image/homeBg5.webp",
-        width: 4,
+        width: 6,
         height: 4
     },
     {
@@ -48,9 +50,30 @@ export const photos = [
 
 
 export default function MansoryGallery() {
+
+    const [selectAll, setSelectAll] = useState(false);
+
+    const toggleSelectAll = () => {
+        setSelectAll(!selectAll);
+    };
+
+    const imageRenderer = useCallback(
+        ({ index, left, top, key, photo}) => (
+            <SelectedImage
+                selected={selectAll}
+                key={key}
+                index={index}
+                photo={photo}
+                left={left}
+                top={top}
+            />
+        ),
+        [selectAll]
+    );
     return <Gallery
         photos={photos}
         direction={"column"}
         columns={4}
+        renderImage={imageRenderer}
     />;
 }
