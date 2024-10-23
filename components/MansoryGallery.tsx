@@ -1,7 +1,8 @@
 import  Gallery  from 'react-photo-gallery'
-import clsx from "clsx";
+import Carousel, { Modal, ModalGateway } from "react-images";
 import SelectedImage from "./SelectedImage";
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
+import Image from "next/image";
 
 export const photos = [
     {
@@ -51,29 +52,44 @@ export const photos = [
 
 export default function MansoryGallery() {
 
-    const [selectAll, setSelectAll] = useState(false);
+    const [selectedImg, setSelectedImg] = useState("");
 
-    const toggleSelectAll = () => {
-        setSelectAll(!selectAll);
-    };
+
 
     const imageRenderer = useCallback(
         ({ index, left, top, key, photo}) => (
             <SelectedImage
-                selected={selectAll}
                 key={key}
                 index={index}
                 photo={photo}
                 left={left}
                 top={top}
+                setState={setSelectedImg}
             />
         ),
-        [selectAll]
+        []
     );
-    return <Gallery
-        photos={photos}
-        direction={"column"}
-        columns={4}
-        renderImage={imageRenderer}
-    />;
+
+    useEffect(() => {
+        if(selectedImg){
+
+        }
+    },[selectedImg])
+
+    return(
+        <div>
+            <Gallery
+            photos={photos}
+            direction={"column"}
+            columns={4}
+            renderImage={imageRenderer}
+        />
+            <ModalGateway>
+                {selectedImg && (
+                    <Modal>
+                       <Image src={selectedImg} alt={"Modal-logo"} width={300} height={300}/>
+                    </Modal>
+                )}
+        </ModalGateway>
+        </div>)
 }
