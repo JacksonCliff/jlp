@@ -10,7 +10,6 @@ import { FaSearchengin } from "react-icons/fa6";
 
 const SelectedImage = ({photo, margin, direction, top, left, setState}) => {
 
-
     const cont = {
         position: "relative",
         left: direction ? left : undefined,
@@ -27,9 +26,16 @@ const SelectedImage = ({photo, margin, direction, top, left, setState}) => {
         cont.top = top;
     }
 
-    const handleOnClick = (e) => {
-        setState(photo.src)
-        console.log(photo.src,"<======== Chekc this")
+
+
+    const handleOnClick = () => {
+        const imgState = {
+            visible : false,
+            img : ""
+        }
+        imgState.visible = true;
+        imgState.img = photo.src;
+        setState(imgState);
     };
 
 

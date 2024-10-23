@@ -52,7 +52,7 @@ export const photos = [
 
 export default function MansoryGallery() {
 
-    const [selectedImg, setSelectedImg] = useState("");
+    const [selected, setSelected] = useState({visible:false,img:""});
 
 
 
@@ -64,17 +64,18 @@ export default function MansoryGallery() {
                 photo={photo}
                 left={left}
                 top={top}
-                setState={setSelectedImg}
+                setState={setSelected}
             />
         ),
         []
     );
 
-    useEffect(() => {
-        if(selectedImg){
-
-        }
-    },[selectedImg])
+    const closeLightBox = () => {
+        setSelected({
+            visible : false,
+            img : ""
+        })
+    }
 
     return(
         <div>
@@ -85,9 +86,12 @@ export default function MansoryGallery() {
             renderImage={imageRenderer}
         />
             <ModalGateway>
-                {selectedImg && (
-                    <Modal>
-                       <Image src={selectedImg} alt={"Modal-logo"} width={300} height={300}/>
+                {selected.visible && (
+                    <Modal
+                        onClose={closeLightBox}
+                        styles={{display:"flex",justifyContent:"center",alignItems : "center"}}
+                    >
+                       <Image src={selected.img} alt={"Modal-logo"} width={300} height={300}/>
                     </Modal>
                 )}
         </ModalGateway>
