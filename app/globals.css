@@ -65,12 +65,21 @@ body {
 
 .hidden-searchIcon {
   top: 30px;
-  transition: top ease-out 0.2s;
+  transition: top ease-out 0.3s;
   opacity: 0;
 }
 
 .hidden-searchIcon:hover{
   top : 0;
   opacity: 1;
+}
+.cusCarousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.width29 {
+  width : 29%;
 }
 

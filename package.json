@@ -16,6 +16,7 @@
     "react-images": "^1.2.0-beta.7",
     "react-parallax-tilt": "^1.7.247",
     "react-photo-gallery": "^8.0.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-slideshow-image": "^4.3.2"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ import { FaSearchengin } from "react-icons/fa6";
 
 
 
-const SelectedImage = ({photo, margin, direction, top, left, setState}) => {
+const SelectedImage = ({photo, margin, direction, top, left, index, setState}) => {
 
     const cont = {
         position: "relative",
@@ -31,10 +31,10 @@ const SelectedImage = ({photo, margin, direction, top, left, setState}) => {
     const handleOnClick = () => {
         const imgState = {
             visible : false,
-            img : ""
+            imgIndex : 0
         }
         imgState.visible = true;
-        imgState.img = photo.src;
+        imgState.imgIndex = index;
         setState(imgState);
     };
 

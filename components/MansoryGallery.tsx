@@ -1,7 +1,10 @@
 import  Gallery  from 'react-photo-gallery'
-import Carousel, { Modal, ModalGateway } from "react-images";
 import SelectedImage from "./SelectedImage";
 import {useCallback, useEffect, useState} from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
+import {Modal,ModalGateway} from "react-images";
 import Image from "next/image";
 
 export const photos = [
@@ -17,8 +20,8 @@ export const photos = [
     },
     {
         src: "/image/homeBg3.webp",
-        width: 6.13,
-        height: 9
+        width: 6,
+        height: 4
     },
     {
         src: "/image/homeBg4.webp",
@@ -48,11 +51,11 @@ export const photos = [
 
 ];
 
-
+const initialWidth = window.innerWidth;
 
 export default function MansoryGallery() {
 
-    const [selected, setSelected] = useState({visible:false,img:""});
+    const [selected, setSelected] = useState({visible:false,imgIndex:0});
 
 
 
@@ -73,27 +76,59 @@ export default function MansoryGallery() {
     const closeLightBox = () => {
         setSelected({
             visible : false,
-            img : ""
+            imgIndex : 0
         })
     }
+
+    const [width, setWidth] = useState<number>(0);
+
+    useEffect(() => {
+        // Set the initial width
+        setWidth(window.innerWidth);
+
+        // Update the width on window resize
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return(
         <div>
             <Gallery
-            photos={photos}
-            direction={"column"}
-            columns={4}
-            renderImage={imageRenderer}
-        />
+                photos={photos}
+                direction={"column"}
+                columns={4}
+                renderImage={imageRenderer}
+            />
             <ModalGateway>
                 {selected.visible && (
-                    <Modal
-                        onClose={closeLightBox}
-                        styles={{display:"flex",justifyContent:"center",alignItems : "center"}}
-                    >
-                       <Image src={selected.img} alt={"Modal-logo"} width={300} height={300}/>
-                    </Modal>
+                    <Modal onClose={closeLightBox}>
+
+                        <div>
+                         <Carousel
+                                width={width * 0.5}
+                                selectedItem={selected.imgIndex}
+                                showThumbs={false}
+                                className={"cusCarousel"}
+                                infiniteLoop={true}
+                            >
+
+                              {photos.map((each) => {
+                                  return(
+                                      <div className="w-full relative pt-[100%]">
+                                        <Image key={each.src} src={each.src} alt={"test"} fill={true}/>
+
+                                      </div>
+
+                                  )
+                              })}
+                            </Carousel>
+                  </div>
+                </Modal>
                 )}
-        </ModalGateway>
+            </ModalGateway>
+
         </div>)
 }
