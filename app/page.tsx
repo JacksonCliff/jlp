@@ -9,6 +9,7 @@ import Tilt from 'react-parallax-tilt';
 import ProgressBar from "../components/ProgressBar";
 import LabeledIcon from "../components/LabeledIcon";
 import MansoryGallery from "../components/MansoryGallery";
+import { FaCaretRight } from "react-icons/fa6"
 
 export default function Restaurant() {
 
@@ -65,21 +66,93 @@ export default function Restaurant() {
                 </div>
             </section>
 
-            {/* Menu Section */ }
+            {/* Gallery Section */ }
             <section id={navSections[2].sectionId} ref={(el) => (sectionRefs.current[2] = el)} className="pl-[30%] pr-[5%] bg-gray-50 text-center mt-20">
                 <MansoryGallery/>
             </section>
-            {/* Testimonials Section */ }
-            <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current[3] = el)} className="p-16 bg-white pl-[25%] text-center">
-                <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                        <p className="text-gray-700 italic">"The food was absolutely amazing! Can't wait to return."</p>
-                        <p className="text-sm text-gray-500 mt-4">- John Doe</p>
+            {/* Menu Section */ }
+            <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current[3] = el)} className="p-16 bg-white pl-[30%]">
+                <div className="w-full h-full p-20 bg-[url('/image/homeBg3.webp')] bg-cover bg-center">
+
+                    <p className="text-center">Today's Special</p>
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
                     </div>
-                    <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                        <p className="text-gray-700 italic">"Best dining experience we've had in a long time."</p>
-                        <p className="text-sm text-gray-500 mt-4">- Jane Smith</p>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                    </div>
+
+                    <div className="mt-10">
+                        <div className="flex flex-row items-center">
+                            <FaCaretRight size={20} color={'red'}/>
+                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
                     </div>
                 </div>
             </section>

@@ -109,6 +109,7 @@ export default function MansoryGallery() {
                         <div>
                          <Carousel
                                 width={width * 0.5}
+                                dynamicHeight={true}
                                 selectedItem={selected.imgIndex}
                                 showThumbs={false}
                                 className={"cusCarousel"}
