@@ -36,8 +36,8 @@ export default function Restaurant() {
 
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="pl-[25%] bg-white h-screen text-center">
-                <h2 className="text-4xl font-bold mb-4">About Us</h2>
-                <p className="text-lg text-gray-700">
+                <h2 className="text-4xl font-bold mb-4 poppins">Who We Are ?</h2>
+                <p className="text-lg text-gray-700 ruda">
                     We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
                 </p>
                 <div className="flex flex-row justify-between items-center bg-red p-16">
@@ -78,7 +78,12 @@ export default function Restaurant() {
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <div className="w-full flex flex-row">
+                                <p className="ml-2 text-lg poppins text-white w-auto whitespace-nowrap">Combination Soup</p>
+                                <div className="border-dashed border-slate-300 border-b-2 border-t-0 w-full h-0 ml-3 mr-3 mt-5"/>
+                                <p className="text-lg poppins text-white"> $10</p>
+
+                            </div>
                         </div>
                         <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
                     </div>

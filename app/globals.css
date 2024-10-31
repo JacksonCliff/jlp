@@ -5,6 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-workSans: "Work Sans", cursive;
+  --font-poppins: 'Poppins', cursive;
+}
+
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+.workSans {
+  font-family: var(--font-workSans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,29 +36,33 @@ body {
   }
 }
 
-.indicator {
+.indicate {
   cursor: pointer;
   padding: 5px;
   text-align: center;
-  border: 1px #ffffff solid;
   position: relative;
   top: -100px;
   right: -45%;
   border-radius: 50%;
-  margin-left: 2px;
+  background: rgba(255,255,255,0.5);
+  border-color: transparent;
+  border-width: 2px;
+  margin-left: 3px;
 
 
 }
 
-.indicator-dot {
+.indicate-dot {
   border-radius: 50%;
-  padding: 3px;
+  padding: 2px;
   background: white;
 }
 
-.indicator.active {
-  color: #fff;
-  background: white;
+
+.indicate.active {
+  border-color: white;
+  border-width: 2px;
+  background: transparent;
 }
 
 .progress-text {

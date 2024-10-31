@@ -12,7 +12,7 @@ const CustomSlider = () => {
             infinite={true}
             pauseOnHover={false}
             canSwipe={true}
-            indicators={() => <div className="indicator"><div className="indicator-dot"/></div>}
+            indicators={() => <div className="indicate"><div className="indicate-dot"/></div>}
             duration={8000}
         >
             {sliderImages.map((item,index) => {
