@@ -10,6 +10,7 @@ import ProgressBar from "../components/ProgressBar";
 import LabeledIcon from "../components/LabeledIcon";
 import MansoryGallery from "../components/MansoryGallery";
 import { FaCaretRight } from "react-icons/fa6"
+import AppText from "../components/AppText";
 
 export default function Restaurant() {
 
@@ -36,15 +37,15 @@ export default function Restaurant() {
 
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="pl-[25%] bg-white h-screen text-center">
-                <h2 className="text-4xl font-bold mb-4 poppins">Who We Are ?</h2>
-                <p className="text-lg text-gray-700 ruda">
+                <AppText className="text-4xl font-bold mb-4 poppins">Who We Are ?</AppText>
+                <AppText className="text-lg text-gray-700 ruda">
                     We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
-                </p>
+                </AppText>
                 <div className="flex flex-row justify-between items-center bg-red p-16">
                     <div className="w-1/2 p-10">
-                        <p>
+                        <AppText>
                             Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                        </p>
+                        </AppText>
 
                         <ProgressBar score={90} iconName={"FaCheck"} label={"Food Quality"}/>
                         <ProgressBar score={77} iconName={"FaClock"} label={"Delivery Time"}/>
@@ -74,90 +75,90 @@ export default function Restaurant() {
             <section id={navSections[3].sectionId} ref={(el) => (sectionRefs.current[3] = el)} className="p-16 bg-white pl-[30%]">
                 <div className="w-full h-full p-20 bg-[url('/image/homeBg3.webp')] bg-cover bg-center">
 
-                    <p className="text-center">Today's Special</p>
+                    <AppText className="text-center">Today's Special</AppText>
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
                             <div className="w-full flex flex-row">
-                                <p className="ml-2 text-lg poppins text-white w-auto whitespace-nowrap">Combination Soup</p>
+                                <AppText className="ml-2 text-lg poppins text-white w-auto whitespace-nowrap">Combination Soup</AppText>
                                 <div className="border-dashed border-slate-300 border-b-2 border-t-0 w-full h-0 ml-3 mr-3 mt-5"/>
-                                <p className="text-lg poppins text-white"> $10</p>
+                                <AppText className="text-lg poppins text-white"> $10</AppText>
 
                             </div>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
-                            <p className="ml-2 text-lg">Potato Curry ----------------------------------- $10</p>
+                            <AppText className="ml-2 text-lg">Potato Curry ----------------------------------- $10</AppText>
                         </div>
-                        <p className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</p>
+                        <AppText className="text-sm text-slate-600 ml-7">Potato,Mushroom,Bell Pepper,Beans</AppText>
                     </div>
                 </div>
             </section>
@@ -167,12 +168,12 @@ export default function Restaurant() {
                 <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                        <p className="text-gray-700 italic">"The food was absolutely amazing! Can't wait to return."</p>
-                        <p className="text-sm text-gray-500 mt-4">- John Doe</p>
+                        <AppText className="text-gray-700 italic">"The food was absolutely amazing! Can't wait to return."</AppText>
+                        <AppText className="text-sm text-gray-500 mt-4">- John Doe</AppText>
                     </div>
                     <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                        <p className="text-gray-700 italic">"Best dining experience we've had in a long time."</p>
-                        <p className="text-sm text-gray-500 mt-4">- Jane Smith</p>
+                        <AppText className="text-gray-700 italic">"Best dining experience we've had in a long time."</AppText>
+                        <AppText className="text-sm text-gray-500 mt-4">- Jane Smith</AppText>
                     </div>
                 </div>
             </section>

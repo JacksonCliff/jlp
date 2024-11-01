@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import {navSections} from "../Constant/UIDatas";
+import AppText from "./AppText";
 
 const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
     const handleScroll = () => {
@@ -13,16 +14,18 @@ const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
                 activeSection === textSectionId?
                     <div
                         className="absolute rounded-full bg-customRed mt-2 h-2/5 duration-10 scale-x-100 transition-transform ease-in-out origin-left z-0">
-                        <p className={`opacity-0 ${text.length > 10? "mx-8" : "mx-3"}`}>{text}</p>
+                        <AppText className={`opacity-0 ${text.length > 10? "mx-8" : "mx-3"}`}>{text}</AppText>
                     </div>
                     :
                     <div
                         className="absolute bg-customRed transform scale-x-0 transition-transform duration-10 mt-2 h-2/5 ease-in-out group-hover:scale-x-100 origin-left rounded-full z-0">
-                        <p className={`opacity-0 ${text.length > 10? "mx-8" : "mx-3"}`}>{text}</p>
+                        <AppText className={`opacity-0 ${text.length > 10? "mx-8" : "mx-3"}`}>{text}</AppText>
                     </div>
             }
             <div className="relative  z-1">
-                <button onClick={handleScroll} className="text-white-500">{text}</button>
+                <button onClick={handleScroll} className="text-white-500">
+                    <AppText>{text}</AppText>
+                </button>
             </div>
         </div>
     )

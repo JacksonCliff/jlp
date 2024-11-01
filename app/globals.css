@@ -5,16 +5,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-workSans: "Work Sans", cursive;
+  --font-openSans: "Open Sans", cursive;
   --font-poppins: 'Poppins', cursive;
+  --font-ubuntu: "Ubuntu", cursive;
+  --font-playBall: "Playball", cursive;
 }
 
 .poppins {
   font-family: var(--font-poppins);
 }
 
-.workSans {
-  font-family: var(--font-workSans);
+.openSans {
+  font-family: var(--font-openSans);
+}
+
+.ubuntu {
+  font-family: var(--font-ubuntu);
+
+}
+.playBall {
+  font-family: var(--font-playBall);
+
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Work_Sans, Poppins } from 'next/font/google';
+import { Open_Sans, Poppins , Ubuntu ,Playball} from 'next/font/google';
 
 
 
@@ -11,13 +11,24 @@ const poppins = Poppins({
   weight: "600",
 });
 
-const workSans = Work_Sans({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-workSans",
-  weight: "400",
+  variable: "--font-openSans",
+  weight: "600",
 });
 
+const ubuntu = Ubuntu({
+    subsets: ["latin"],
+    variable: "--font-ubuntu",
+    weight : "400"
 
+});
+
+const playBall = Playball({
+    subsets: ["latin"],
+    variable: "--font-playBall",
+    weight : "400"
+})
 
 
 
@@ -29,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${workSans.variable} antialiased`}
+        className={`${poppins.variable} ${openSans.variable} ${ubuntu.variable} ${playBall.variable} antialiased`}
       >
         {children}
       </body>

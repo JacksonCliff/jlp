@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Icons from "react-icons/fa6";
+import AppText from "./AppText";
 
 function LabeledIcon({iconName = "FaCheck",className,color = "green",txColor="black", label = "Quality"}) {
     const IconComponent = Icons[iconName];
@@ -7,7 +8,7 @@ function LabeledIcon({iconName = "FaCheck",className,color = "green",txColor="bl
     return (
         <div className={`w-full flex justify-start items-center ${className}`}>
             <IconComponent style={{fontSize : "x-large"}} color={color}/>
-            <p className="ml-2 font-bold text-lg" style={{color:txColor}}>{label}</p>
+            <AppText className="ml-2 font-bold text-lg" style={{color:txColor}}>{label}</AppText>
         </div>
     );
 }

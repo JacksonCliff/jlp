@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import LabeledIcon from "./LabeledIcon";
+import AppText from "./AppText";
 
 export default function ProgressBar({score=100,iconName,label,color,txColor}) {
     const [progress, setProgress] = useState(0);
@@ -53,7 +54,7 @@ export default function ProgressBar({score=100,iconName,label,color,txColor}) {
                         transition: 'left 0.5s ease-out', // Smooth transition for the indicator
                     }}
                 >
-                    <p className="progress-text">{Math.round(progress)}%</p>
+                    <AppText className="progress-text">{Math.round(progress)}%</AppText>
                 </div>
             </div>
         </div>
