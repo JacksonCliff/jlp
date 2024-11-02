@@ -38,8 +38,8 @@ export default function Restaurant() {
             {/* About Section */ }
             <section id={navSections[1].sectionId} ref={(el) => (sectionRefs.current[1] = el)} className="bg-white h-screen text-center">
                 <div className="w-full h-full p-20 pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center">
-                    <AppText className="text-4xl font-bold mb-4 poppins">Who We Are ?</AppText>
-                    <AppText className="text-lg text-gray-700 ruda">
+                    <AppText className="text-4xl font-bold mb-4">Who We Are ?</AppText>
+                    <AppText className="text-lg text-gray-700">
                         We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
                     </AppText>
                     <div className="flex flex-row justify-between items-center bg-red p-16">
@@ -82,9 +82,9 @@ export default function Restaurant() {
                         <div className="flex flex-row items-center">
                             <FaCaretRight size={20} color={'red'}/>
                             <div className="w-full flex flex-row">
-                                <AppText className="ml-2 text-lg poppins text-white w-auto whitespace-nowrap">Combination Soup</AppText>
+                                <AppText className="ml-2 text-lg text-white w-auto whitespace-nowrap">Combination Soup</AppText>
                                 <div className="border-dashed border-slate-300 border-b-2 border-t-0 w-full h-0 ml-3 mr-3 mt-5"/>
-                                <AppText className="text-lg poppins text-white"> $10</AppText>
+                                <AppText className="text-lg text-white"> $10</AppText>
 
                             </div>
                         </div>
