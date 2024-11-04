@@ -109,5 +109,50 @@ body {
 }
 
 .negativeTop {
-  top : -6000px;
+  margin-top : -3%;
+}
+
+@media (min-width: 300px) {
+  .negativeTop {
+    margin-top: -10%;
+  }
+}
+
+@media (min-width: 500px) {
+  .negativeTop {
+    margin-top: -8%;
+  }
+}
+
+@media (min-width: 700px) {
+  .negativeTop {
+    margin-top: -6%;
+  }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 768px) {
+  .negativeTop {
+    margin-top: -6%;
+  }
+}
+
+@media (min-width: 900px) {
+  .negativeTop {
+    margin-top: -6%;
+  }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1024px) {
+  .negativeTop {
+    margin-top: -5%;
+  }
+}
+
+/* For extra-large screens (wider desktops) */
+@media (min-width: 1440px) {
+  .negativeTop {
+    margin-top: -2%;
+  }
 }

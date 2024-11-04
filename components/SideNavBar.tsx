@@ -5,8 +5,7 @@ import AppText from "./AppText";
 
 const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
     const handleScroll = () => {
-        console.log(sectionRef,"<===== Check Ref")
-        sectionRef.scrollIntoView({ behavior: "smooth" });
+        alert(window.innerWidth)
     };
     return (
         <div className="relative group flex justify-center items-center">
