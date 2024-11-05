@@ -8,7 +8,7 @@ export const navSections = [
 
 //unsplash pictures
 export const sliderImages = [
-    {url : '/image/homeBg3.webp'},
+    {url : '/image/homeBg14.webp'},
     {url : '/image/homeBg5.webp'},
-    {url : '/image/homeBg7.webp'},
+    {url : '/image/homeBg15.webp'},
 ]

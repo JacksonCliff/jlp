@@ -59,6 +59,7 @@ body {
   border-color: transparent;
   border-width: 2px;
   margin-left: 3px;
+  z-index: 10;
 
 
 }
@@ -155,4 +156,8 @@ body {
   .negativeTop {
     margin-top: -2%;
   }
+}
+
+.height125 {
+  height: 125%;
 }

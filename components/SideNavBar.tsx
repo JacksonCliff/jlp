@@ -5,7 +5,8 @@ import AppText from "./AppText";
 
 const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
     const handleScroll = () => {
-        alert(window.innerWidth)
+        console.log(sectionRef,"<===== Check Ref")
+        sectionRef.scrollIntoView({ behavior: "smooth" });
     };
     return (
         <div className="relative group flex justify-center items-center">
@@ -57,7 +58,7 @@ function SideNavBar({sectionRefs}) {
     }, []);
 
     return (
-            <div className="absolute top-0 left-0 w-1/4 h-full pt-10">
+            <div className="absolute z-20 top-0 left-0 w-1/4 h-full pt-10">
                 <aside
                     className="sticky top-0 left-0 w-100 h-screen bg-black bg-opacity-90 p-4 z-10 flex flex-col justify-center items-center">
                     <Image

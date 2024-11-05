@@ -3,7 +3,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import {sliderImages} from "../Constant/UIDatas";
 
-const CustomSlider = () => {
+const CustomSlider = ({className}) => {
 
     return (
         <Slide
@@ -14,6 +14,7 @@ const CustomSlider = () => {
             canSwipe={true}
             indicators={() => <div className="indicate"><div className="indicate-dot"/></div>}
             duration={8000}
+            cssClass={className}
         >
             {sliderImages.map((item,index) => {
                 return (
