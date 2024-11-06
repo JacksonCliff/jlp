@@ -197,17 +197,13 @@ export default function Restaurant() {
                     </div>
                 </section>
 
-                {/* Online Order Section */ }
-                <section id={navSections[4].sectionId} ref={(el) => (sectionRefs.current[4] = el)} className="p-16 bg-gray-50 pl-[25%] text-center mb-100">
-                    <AppText className="text-4xl font-bold mb-8">What Our Customers Say</AppText>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                            <AppText className="text-gray-700 italic">"The food was absolutely amazing! Can't wait to return."</AppText>
-                            <AppText className="text-sm text-gray-500 mt-4">- John Doe</AppText>
-                        </div>
-                        <div className="bg-gray-100 p-6 rounded-full-lg shadow-md">
-                            <AppText className="text-gray-700 italic">"Best dining experience we've had in a long time."</AppText>
-                            <AppText className="text-sm text-gray-500 mt-4">- Jane Smith</AppText>
+                {/* Contact Us Section */ }
+                <section id={navSections[4].sectionId} ref={(el) => (sectionRefs.current[4] = el)} className="bg-slate-950 pl-[30%] p-16 text-center mb-100">
+                    <div className="relative z-10">
+                        <AppText className="text-4xl font-bold mb-8">Contact Us</AppText>
+                        <div className="w-full h-52 flex items-center justify-center bg-customRed">
+                            <AppText className="text-4xl font-bold">+971559613596</AppText>
+
                         </div>
                     </div>
                 </section>
