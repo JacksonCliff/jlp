@@ -1,12 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import LabeledIcon from "./LabeledIcon";
+import * as Icons from "react-icons/fa6";
 import AppText from "./AppText";
 
-export default function ProgressBar({score=100,iconName,label,color,txColor}) {
+type IconName = keyof typeof Icons;
+
+interface ProgressBarProps {
+    score: number;
+    iconName : IconName;
+    label : string;
+    color :string;
+    txColor : string;
+
+}
+
+export default function ProgressBar({score=100,iconName,label,color,txColor} : ProgressBarProps) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        let progressInterval;
+        let progressInterval : NodeJS.Timeout;
         const startProgress = () => {
             progressInterval = setInterval(() => {
                 setProgress((prevProgress) => {

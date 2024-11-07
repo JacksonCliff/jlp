@@ -1,73 +1,86 @@
-import  Gallery  from 'react-photo-gallery'
+import Gallery ,{ RenderImageProps}  from 'react-photo-gallery'
 import SelectedImage from "./SelectedImage";
-import {useCallback, useEffect, useState} from "react";
+import { useCallback, useEffect, useState} from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-
-import {Modal,ModalGateway} from "react-images";
+import {Modal,ModalGateway} from "../OwnLibrary/my-react-images";
+import {Carousel} from "react-responsive-carousel";
 import Image from "next/image";
 
 export const photos = [
     {
         src: "/image/homeBg.webp",
         width: 4,
-        height: 4
+        height: 4,
+        title : "image1"
     },
     {
         src: "/image/homeBg2.webp",
         width: 2,
-        height: 1.33
+        height: 1.33,
+        title : "image2"
+
     },
     {
         src: "/image/homeBg3.webp",
         width: 6,
-        height: 4
+        height: 4,
+        title : "image3"
+
     },
     {
         src: "/image/homeBg4.webp",
         width: 9,
-        height: 6
+        height: 6,
+        title : "image4"
+
     },
     {
         src: "/image/homeBg5.webp",
         width: 6,
-        height: 4
+        height: 4,
+        title : "image5"
+
     },
     {
         src: "/image/homeBg6.webp",
         width: 2,
-        height: 1.13
+        height: 1.13,
+        title : "image6"
+
     },
     {
         src: "/image/homeBg7.webp",
         width: 3,
-        height: 2
+        height: 2,
+        title : "image7"
+
     },
     {
         src: "/image/homeBg8.webp",
         width: 10,
-        height: 6.5
+        height: 6.5,
+        title : "image8"
+
     },
 
 ];
 
-const initialWidth = window.innerWidth;
 
 export default function MansoryGallery() {
 
     const [selected, setSelected] = useState({visible:false,imgIndex:0});
 
 
-
     const imageRenderer = useCallback(
-        ({ index, left, top, key, photo}) => (
+        ({ index, left, top, photo }: RenderImageProps) => (
             <SelectedImage
-                key={key}
                 index={index}
-                photo={photo}
                 left={left}
                 top={top}
-                setState={setSelected}
+                photo={photo}
+                margin={10} // Example margin, adjust as needed
+                direction="column" // Example direction, adjust as needed
+                setState={setSelected} // Manage setState in the parent component and pass it down if needed
             />
         ),
         []
@@ -85,7 +98,7 @@ export default function MansoryGallery() {
     useEffect(() => {
         // Set the initial width
         setWidth(window.innerWidth);
-
+        console.log(width)
         // Update the width on window resize
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
@@ -102,12 +115,11 @@ export default function MansoryGallery() {
                 columns={4}
                 renderImage={imageRenderer}
             />
-            <ModalGateway>
-                {selected.visible && (
+            {selected.visible && (
+                <ModalGateway>
                     <Modal onClose={closeLightBox}>
-
                         <div>
-                         <Carousel
+                            <Carousel
                                 width={width * 0.5}
                                 dynamicHeight={true}
                                 selectedItem={selected.imgIndex}
@@ -116,20 +128,19 @@ export default function MansoryGallery() {
                                 infiniteLoop={true}
                             >
 
-                              {photos.map((each) => {
-                                  return(
-                                      <div className="w-full relative pt-[100%]">
-                                        <Image key={each.src} src={each.src} alt={"test"} fill={true}/>
+                                {photos.map((each) => {
+                                    return(
+                                        <div key={each.src} className="w-full relative pt-[100%]">
+                                            <Image key={each.src} src={each.src} alt={"test"} fill={true}/>
 
-                                      </div>
+                                        </div>
 
-                                  )
-                              })}
+                                    )
+                                })}
                             </Carousel>
-                  </div>
-                </Modal>
-                )}
-            </ModalGateway>
-
+                        </div>
+                    </Modal>
+                </ModalGateway>
+            )}
         </div>)
 }

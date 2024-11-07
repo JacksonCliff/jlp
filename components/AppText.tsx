@@ -1,8 +1,14 @@
 import React from 'react';
 
-function AppText({children,className}) {
+interface AppTextProps {
+    children: React.ReactNode;
+    className?: string;
+    style?: React.CSSProperties;
+}
+
+function AppText({children,className,style} : AppTextProps) {
     return (
-        <p className={`${className} playBall`}>{children}</p>
+        <p style={style} className={`${className} playBall`}>{children}</p>
     );
 }
 

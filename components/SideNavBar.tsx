@@ -1,12 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {MutableRefObject, useEffect, useState} from 'react';
 import Image from "next/image";
 import {navSections} from "../Constant/UIDatas";
 import AppText from "./AppText";
 
-const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
+interface SectionTextProps {
+    text? : string;
+    activeSection : string | null;
+    textSectionId : string;
+    sectionRef : HTMLElement | null;
+}
+
+const SectionText = ({text = "Section",activeSection,textSectionId,sectionRef} : SectionTextProps) => {
     const handleScroll = () => {
         console.log(sectionRef,"<===== Check Ref")
-        sectionRef.scrollIntoView({ behavior: "smooth" });
+        if(sectionRef){
+            sectionRef.scrollIntoView({ behavior: "smooth" });
+        }
     };
     return (
         <div className="relative group flex justify-center items-center">
@@ -31,9 +40,13 @@ const SectionText = ({text,activeSection,textSectionId,sectionRef}) => {
     )
 }
 
-function SideNavBar({sectionRefs}) {
+interface SideNavBarProps {
+    sectionRefs: MutableRefObject<(HTMLElement | null)[]>; // Correct typing for useRef
+}
 
-    const [activeSection, setActiveSection] = useState<string>(null);
+function SideNavBar({sectionRefs}: SideNavBarProps) {
+
+    const [activeSection, setActiveSection] = useState<string | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,11 +55,14 @@ function SideNavBar({sectionRefs}) {
 
             sectionIds.forEach((sectionId, index) => {
                 const section = sectionRefs.current[index];
-                const rect = section.getBoundingClientRect();
-                const sectionTop = window.scrollY + rect.top;
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + rect.height) {
-                    setActiveSection(sectionId);
-                    console.log(sectionId,section,rect,'Active section ID')
+                if (section && "getBoundingClientRect" in section) {  // Safe check for null and the method existence
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = window.scrollY + rect.top;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + rect.height) {
+                        setActiveSection(sectionId);
+                        console.log(sectionId, section, rect, 'Active section ID');
+                    }
                 }
             });
         };

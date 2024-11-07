@@ -2,8 +2,19 @@ import React from 'react';
 import * as Icons from "react-icons/fa6";
 import AppText from "./AppText";
 
-function LabeledIcon({iconName = "FaCheck",className,color = "green",txColor="black", label = "Quality"}) {
-    const IconComponent = Icons[iconName];
+type IconName = keyof typeof Icons; // Type all valid icon names
+
+interface LabeledIconProps {
+    iconName: IconName;
+    className: string;
+    color: string;
+    txColor: string;
+    label: string;
+
+}
+
+function LabeledIcon({iconName, className, color, txColor, label,}: LabeledIconProps) {
+    const IconComponent = Icons[iconName]; // TypeScript now knows this is a valid icon component
 
     return (
         <div className={`w-full flex justify-start items-center ${className}`}>

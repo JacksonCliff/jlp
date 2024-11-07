@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Open_Sans , Ubuntu ,Playball} from 'next/font/google';
 

@@ -2,15 +2,33 @@ import React from "react";
 import Image from "next/image";
 import { FaSearchengin } from "react-icons/fa6";
 
+interface Photo {
+    src: string;
+    width: number;
+    height: number;
+    title?: string;
+}
 
+interface SelectedImageProps {
+    photo: Photo;
+    margin: number | undefined;
+    direction?: string; // Allow any string
+    top: number | undefined;
+    left: number | undefined;
+    index: number;
+    setState: React.Dispatch<React.SetStateAction<{ visible: boolean; imgIndex: number }>>;
+}
 
-
-
-
-
-const SelectedImage = ({photo, margin, direction, top, left, index, setState}) => {
-
-    const cont = {
+const SelectedImage: React.FC<SelectedImageProps> = ({
+                                                         photo,
+                                                         margin,
+                                                         direction,
+                                                         top,
+                                                         left,
+                                                         index,
+                                                         setState,
+                                                     }) => {
+    const cont: React.CSSProperties = {
         position: "relative",
         left: direction ? left : undefined,
         top: direction ? top : undefined,
@@ -20,24 +38,15 @@ const SelectedImage = ({photo, margin, direction, top, left, index, setState}) =
         cont.position = "absolute";
         cont.left = left;
         cont.top = top;
-    }else if(!direction){
+    } else if (!direction) {
         cont.position = "absolute";
         cont.left = left;
         cont.top = top;
     }
 
-
-
     const handleOnClick = () => {
-        const imgState = {
-            visible : false,
-            imgIndex : 0
-        }
-        imgState.visible = true;
-        imgState.imgIndex = index;
-        setState(imgState);
+        setState({ visible: true, imgIndex: index });
     };
-
 
     return (
         <div
@@ -47,7 +56,7 @@ const SelectedImage = ({photo, margin, direction, top, left, index, setState}) =
             {/* Blurred Image */}
             <div className="relative group">
                 <Image
-                    alt={photo.title}
+                    alt={typeof photo.title === "string"? photo.title : ""}
                     src={photo.src}
                     width={photo.width}
                     height={photo.height}
@@ -58,7 +67,7 @@ const SelectedImage = ({photo, margin, direction, top, left, index, setState}) =
                     onClick={handleOnClick}
                     className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 hidden-searchIcon"
                 >
-                    <FaSearchengin color={"white"} size={25} />
+                    <FaSearchengin color="white" size={25} />
                 </div>
             </div>
         </div>
@@ -66,4 +75,3 @@ const SelectedImage = ({photo, margin, direction, top, left, index, setState}) =
 };
 
 export default SelectedImage;
-

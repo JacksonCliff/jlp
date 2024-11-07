@@ -3,7 +3,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import {sliderImages} from "../Constant/UIDatas";
 
-const CustomSlider = ({className}) => {
+const CustomSlider = ({className = ""}) => {
 
     return (
         <Slide
