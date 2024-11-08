@@ -1,0 +1,8 @@
+{
+  "build": {
+    "ignoreBuildStep": "echo 'Skipping build due to legacy peer dependencies'"
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
