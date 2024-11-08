@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build":  "if [ \"$SKIP_BUILD\" != \"true\" ]; then next build; else echo 'Skipping build...'; fi",
     "start": "next start",
     "lint": "next lint"
   },
