@@ -42,16 +42,17 @@ const SectionText = ({text = "Section",activeSection,textSectionId,sectionRef} :
 
 interface SideNavBarProps {
     sectionRefs: MutableRefObject<(HTMLElement | null)[]>; // Correct typing for useRef
+    className? : string;
 }
 
-function SideNavBar({sectionRefs}: SideNavBarProps) {
+function SideNavBar({sectionRefs,className}: SideNavBarProps) {
 
-    const [activeSection, setActiveSection] = useState<string | null>(null);
+    const [activeSection, setActiveSection] = useState("section1");
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY + window.innerHeight / 2;
-            const sectionIds = ['section1', 'section2', 'section3', 'section4', 'section5'];
+            const sectionIds = navSections.map(item => item.sectionId);
 
             sectionIds.forEach((sectionId, index) => {
                 const section = sectionRefs.current[index];
@@ -74,7 +75,7 @@ function SideNavBar({sectionRefs}: SideNavBarProps) {
     }, []);
 
     return (
-            <div className="absolute z-20 top-0 left-0 w-1/4 h-full pt-10">
+            <div className={className? className : "absolute z-20 top-0 left-0 w-1/4 h-full pt-10"}>
                 <aside
                     className="sticky top-0 left-0 w-100 h-screen bg-black bg-opacity-90 p-4 z-10 flex flex-col justify-center items-center">
                     <Image

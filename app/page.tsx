@@ -8,15 +8,25 @@ import CustomSlider from "../components/CustomSlider";
 import Tilt from 'react-parallax-tilt';
 import ProgressBar from "../components/ProgressBar";
 import MansoryGallery from "../components/MansoryGallery";
-import { FaCaretRight } from "react-icons/fa6"
+import {FaBars, FaCaretRight} from "react-icons/fa6"
 import AppText from "../components/AppText";
+import AnimatedMenu from "../components/AnimatedMenu";
+
+
 
 export default function Restaurant() {
 
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     const [areRefsReady, setRefsReady] = useState(false);
+    const [openMenuModal,setOpenMenuModal] = useState(false);
 
-
+    const handleMenuClick = () => {
+        if(openMenuModal){
+            setOpenMenuModal(false)
+            return
+        }
+        setOpenMenuModal(true)
+    }
 
     useEffect(() => {
         // When the sections are mounted, mark the refs as ready
@@ -27,8 +37,18 @@ export default function Restaurant() {
 
     return (
         <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
-            {areRefsReady && <SideNavBar sectionRefs={sectionRefs} />}
-            {/* Hero Section with Background Image */ }
+            <div className="hidden md:block">
+                {areRefsReady && <SideNavBar sectionRefs={sectionRefs} />}
+            </div>
+
+            <div className="block md:hidden fixed bg-black w-full flex items-center p-1 z-50">
+                {/* This content will only be visible on mobile screens smaller than 'md' (768px) */}
+                <button onClick={handleMenuClick}>
+                    <FaBars size={30} color={"white"}/>
+                </button>
+            </div>
+            {/*     Section with Background Image */ }
+            <AnimatedMenu sectionRefs={sectionRefs} openModal={openMenuModal} toggleFun={handleMenuClick}/>
 
             <section id={navSections[0].sectionId} ref={(el) => {sectionRefs.current[0] = el}}>
                 <CustomSlider className="relative z-10"/>
@@ -36,18 +56,18 @@ export default function Restaurant() {
 
             <div className="negativeTop">
                 {/* About Section */ }
-                <section id={navSections[1].sectionId} ref={(el) => {sectionRefs.current[1] = el}} className="bg-white h-screen text-center">
-                    <div className="w-full pt-20 pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center height125">
+                <section id={navSections[1].sectionId} ref={(el) => {sectionRefs.current[1] = el}} className="bg-white h-auto text-center">
+                    <div className="w-full pt-20 pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-auto">
                         {/* Dark overlay */}
                         <div className="absolute inset-0 bg-black opacity-50"/>
 
                         {/* Main content */}
                         <div className="relative z-10">
                             <AppText className="text-4xl font-bold mb-4">Who We Are ?</AppText>
-                            <AppText className="text-lg text-white-700">
+                            <AppText className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white-700">
                                 We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
                             </AppText>
-                            <div className="flex flex-row justify-evenly items-center px-24">
+                            <div className="flex lg:flex-row md:flex-col justify-evenly items-center px-24">
                                 <div className="w-1/2 p-10">
                                     <AppText className={"text-slate-300"}>
                                         Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -74,7 +94,7 @@ export default function Restaurant() {
                 </section>
 
                 {/* Gallery Section */ }
-                <section id={navSections[2].sectionId} ref={(el) => {sectionRefs.current[2] = el}} className="pl-[30%] pr-[5%] bg-gray-50 text-center mt-32 pt-20 bg-[url('/image/homeBg10.webp')] bg-cover bg-center">
+                <section id={navSections[2].sectionId} ref={(el) => {sectionRefs.current[2] = el}} className="pl-[30%] pr-[5%] text-center mt-32 pt-20 bg-[url('/image/homeBg10.webp')] bg-cover bg-center">
                     <div className=" bg-cover bg-center w-full h-screen">
                         <MansoryGallery/>
                     </div>
