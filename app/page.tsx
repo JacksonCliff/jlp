@@ -41,7 +41,7 @@ export default function Restaurant() {
                 {areRefsReady && <SideNavBar sectionRefs={sectionRefs} />}
             </div>
 
-            <div className="block md:hidden fixed bg-black w-full flex items-center p-1 z-50">
+            <div className="block sm:hidden fixed bg-black w-full flex items-center p-1 z-50">
                 {/* This content will only be visible on mobile screens smaller than 'md' (768px) */}
                 <button onClick={handleMenuClick}>
                     <FaBars size={30} color={"white"}/>
@@ -57,7 +57,7 @@ export default function Restaurant() {
             <div className="negativeTop">
                 {/* About Section */ }
                 <section id={navSections[1].sectionId} ref={(el) => {sectionRefs.current[1] = el}} className="bg-white h-auto text-center">
-                    <div className="w-full pt-20 pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-auto">
+                    <div className="w-full pt-20 p-5 md:pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-auto">
                         {/* Dark overlay */}
                         <div className="absolute inset-0 bg-black opacity-50"/>
 
@@ -67,8 +67,8 @@ export default function Restaurant() {
                             <AppText className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white-700">
                                 We are a family-owned restaurant bringing the best culinary experience with a fusion of flavors.
                             </AppText>
-                            <div className="flex lg:flex-row md:flex-col justify-evenly items-center px-24">
-                                <div className="w-1/2 p-10">
+                            <div className="flex flex-col md:flex-row mt-3  justify-center items-center">
+                                <div className="w-full h-auto md:h-screen md:w-1/2 sm:p-10 p-4">
                                     <AppText className={"text-slate-300"}>
                                         Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
                                     </AppText>
@@ -79,7 +79,7 @@ export default function Restaurant() {
                                 <Tilt
                                     tiltMaxAngleX={10}
                                     tiltMaxAngleY={10}
-                                    className="relative w-2/5 h-[45vh] md:h-[55vh] lg:h-[75vh]"
+                                    className="relative w-full sm:w-4/5 md:w-2/5 lg:w-2/5 h-[75vh] sm:h-[100vh]"
                                 >
                                     <Image
                                         src="/image/homeBg13.webp"

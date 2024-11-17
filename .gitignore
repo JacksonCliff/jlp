@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-/OwnLibrary/node_modules
+/OwnLibrary/my-react-images/node_modules
 
 # testing
 /coverage
