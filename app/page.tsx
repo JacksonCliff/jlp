@@ -41,8 +41,7 @@ export default function Restaurant() {
                 {areRefsReady && <SideNavBar sectionRefs={sectionRefs} />}
             </div>
 
-            <div className="block sm:hidden fixed bg-black w-full flex items-center p-1 z-50">
-                {/* This content will only be visible on mobile screens smaller than 'md' (768px) */}
+            <div className="block md:hidden fixed bg-black w-full flex items-center p-1 z-50">
                 <button onClick={handleMenuClick}>
                     <FaBars size={30} color={"white"}/>
                 </button>
@@ -54,10 +53,10 @@ export default function Restaurant() {
                 <CustomSlider className="relative z-10"/>
             </section>
 
-            <div className="negativeTop">
+            <div className="negativeTop bg-red-500">
                 {/* About Section */ }
-                <section id={navSections[1].sectionId} ref={(el) => {sectionRefs.current[1] = el}} className="bg-white h-auto text-center">
-                    <div className="w-full pt-20 p-5 md:pl-[25%] bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-auto">
+                <section id={navSections[1].sectionId} ref={(el) => {sectionRefs.current[1] = el}} className="bg-white h-auto text-center md:pl-[25%]">
+                    <div className="w-full pt-20 bg-[url('/image/homeBg3.webp')] bg-cover bg-center h-auto p-5">
                         {/* Dark overlay */}
                         <div className="absolute inset-0 bg-black opacity-50"/>
 
@@ -94,13 +93,13 @@ export default function Restaurant() {
                 </section>
 
                 {/* Gallery Section */ }
-                <section id={navSections[2].sectionId} ref={(el) => {sectionRefs.current[2] = el}} className="pl-[30%] pr-[5%] text-center mt-32 pt-20 bg-[url('/image/homeBg10.webp')] bg-cover bg-center">
-                    <div className=" bg-cover bg-center w-full h-screen">
+                <section id={navSections[2].sectionId} ref={(el) => {sectionRefs.current[2] = el}} className="md:pl-[25%] text-center pt-20 bg-[url('/image/homeBg10.webp')] bg-cover bg-center">
+                    <div className=" bg-cover bg-center w-full h-screen pr-[2%]">
                         <MansoryGallery/>
                     </div>
                 </section>
                 {/* Menu Section */ }
-                <section id={navSections[3].sectionId} ref={(el) => {sectionRefs.current[3] = el}} className="p-16 bg-white pl-[30%] bg-[url('/image/homeBg11.webp')] bg-cover bg-center">
+                <section id={navSections[3].sectionId} ref={(el) => {sectionRefs.current[3] = el}} className="md:p-16 p-5 bg-white md:pl-[30%] bg-[url('/image/homeBg11.webp')] bg-cover bg-center">
                     <div className="w-full h-full p-20 bg-[url('/image/homeBg16.webp')] bg-cover bg-center relative z-10">
 
                         <AppText className="text-center text-4xl">{"Today's Special"}</AppText>
@@ -217,7 +216,7 @@ export default function Restaurant() {
                 </section>
 
                 {/* Contact Us Section */ }
-                <section id={navSections[4].sectionId} ref={(el) => {sectionRefs.current[4] = el}} className="bg-slate-950 pl-[30%] p-16 text-center mb-100">
+                <section id={navSections[4].sectionId} ref={(el) => {sectionRefs.current[4] = el}} className="bg-slate-950 md:pl-[30%] p-5 md:p-16 text-center mb-100">
                     <div className="relative z-10">
                         <AppText className="text-4xl font-bold mb-8">Contact Us</AppText>
                         <div className="w-full h-52 flex items-center justify-center bg-customRed">
