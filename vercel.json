@@ -1,9 +1,0 @@
-{
-  "builds": [
-    {
-      "src": "OwnLibrary/my-react-images/package.json",
-      "use": "@vercel/node"
-    }
-  ],
-  "buildCommand": "npm install --legacy-peer-deps && cd OwnLibrary/my-react-images && npm install --legacy-peer-deps && npm run build"
-}

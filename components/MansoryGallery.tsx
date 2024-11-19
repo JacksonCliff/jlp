@@ -2,8 +2,9 @@ import Gallery ,{ RenderImageProps}  from 'react-photo-gallery'
 import SelectedImage from "./SelectedImage";
 import { useCallback, useEffect, useState} from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import {Modal,ModalGateway} from "../OwnLibrary/my-react-images";
 import {Carousel} from "react-responsive-carousel";
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 import Image from "next/image";
 
 export const photos = [
@@ -115,9 +116,8 @@ export default function MansoryGallery() {
                 columns={4}
                 renderImage={imageRenderer}
             />
-            {selected.visible && (
-                <ModalGateway>
-                    <Modal onClose={closeLightBox}>
+
+                    <Modal open={selected.visible} onClose={closeLightBox} center>
                         <div>
                             <Carousel
                                 width={width * 0.5}
@@ -140,7 +140,6 @@ export default function MansoryGallery() {
                             </Carousel>
                         </div>
                     </Modal>
-                </ModalGateway>
-            )}
+
         </div>)
 }
