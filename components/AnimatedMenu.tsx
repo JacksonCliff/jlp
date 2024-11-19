@@ -1,14 +1,18 @@
 import React, {MutableRefObject, useEffect, useState} from "react";
 import { motion } from "framer-motion";
 import {Modal,ModalGateway} from "../OwnLibrary/my-react-images";
-import {FaBars} from "react-icons/fa6";
 import {navSections} from "../Constant/UIDatas";
 import AppText from "./AppText";
 import { RxCross1 } from "react-icons/rx";
+
 interface AnimatedMenuProps {
     sectionRefs: MutableRefObject<(HTMLElement | null)[]>; // Correct typing for useRef
     openModal : boolean;
     toggleFun : () => void;
+}
+
+interface handleScrollProps {
+    (htmlRef : HTMLElement | null, sectionId : string) : void
 }
 
 const AnimatedMenu = ({sectionRefs,openModal,toggleFun} : AnimatedMenuProps) => {
@@ -23,7 +27,7 @@ const AnimatedMenu = ({sectionRefs,openModal,toggleFun} : AnimatedMenuProps) => 
         },500)
     }
 
-    const handleScroll = (htmlRef,sectionId) => {
+    const handleScroll : handleScrollProps = (htmlRef,sectionId) => {
         setActiveSection(sectionId)
         setStartAnimation(false);
         setTimeout(() => {
