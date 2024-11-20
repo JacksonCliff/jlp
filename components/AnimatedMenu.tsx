@@ -17,15 +17,13 @@ import Image from "next/image";
 
 interface AnimatedMenuProps {
     sectionRefs: MutableRefObject<(HTMLElement | null)[]>; // Correct typing for useRef
-    openModal : boolean;
-    toggleFun : () => void;
 }
 
 interface handleScrollProps {
     (htmlRef : HTMLElement | null, sectionId : string) : void
 }
 
-const AnimatedMenu = ({sectionRefs,toggleFun} : AnimatedMenuProps) => {
+const AnimatedMenu = ({sectionRefs} : AnimatedMenuProps) => {
 
     const [startAnimation,setStartAnimation] = useState(false);
     const [activeSection, setActiveSection] = useState("section1");

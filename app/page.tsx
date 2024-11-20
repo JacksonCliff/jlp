@@ -8,7 +8,7 @@ import CustomSlider from "../components/CustomSlider";
 import Tilt from 'react-parallax-tilt';
 import ProgressBar from "../components/ProgressBar";
 import MansoryGallery from "../components/MansoryGallery";
-import {FaBars, FaCaretRight} from "react-icons/fa6"
+import {FaCaretRight} from "react-icons/fa6"
 import AppText from "../components/AppText";
 import AnimatedMenu from "../components/AnimatedMenu";
 

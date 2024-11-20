@@ -18,6 +18,7 @@ import {
 } from "react-stacked-center-carousel";
 import {RxCross1} from "react-icons/rx";
 
+// eslint-disable-next-line react/display-name
 export const Card = React.memo(function (props) {
     const { data, dataIndex } = props;
     const { cover } = data[dataIndex];
