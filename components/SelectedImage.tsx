@@ -16,7 +16,8 @@ interface SelectedImageProps {
     top: number | undefined;
     left: number | undefined;
     index: number;
-    setState: React.Dispatch<React.SetStateAction<{ visible: boolean; imgIndex: number }>>;
+    setState: React.Dispatch<React.SetStateAction<number>>;
+    openModal : () => void;
 }
 
 const SelectedImage: React.FC<SelectedImageProps> = ({
@@ -27,6 +28,7 @@ const SelectedImage: React.FC<SelectedImageProps> = ({
                                                          left,
                                                          index,
                                                          setState,
+                                                         openModal
                                                      }) => {
     const cont: React.CSSProperties = {
         position: "relative",
@@ -45,7 +47,8 @@ const SelectedImage: React.FC<SelectedImageProps> = ({
     }
 
     const handleOnClick = () => {
-        setState({ visible: true, imgIndex: index });
+        setState(index);
+        openModal();
     };
 
     return (
@@ -65,7 +68,7 @@ const SelectedImage: React.FC<SelectedImageProps> = ({
                 {/* Search Icon (Appears on hover, but remains unblurred) */}
                 <div
                     onClick={handleOnClick}
-                    className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 hidden-searchIcon"
+                    className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-1 hidden-searchIcon"
                 >
                     <FaSearchengin color="white" size={25} />
                 </div>

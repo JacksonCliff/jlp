@@ -59,7 +59,7 @@ export default function ProgressBar({score=100,iconName,label,color,txColor} : P
 
                 {/* Moving Percentage Indicator */}
                 <div
-                    className="absolute -top-3 h-8 w-12 bg-green-600 text-white rounded-full flex justify-center items-center z-10 progress-indicator"
+                    className="absolute -top-3 h-8 w-12 bg-green-600 text-white rounded-full flex justify-center items-center z-1 progress-indicator"
                     style={{
                         left: `${progress}%`, // Move based on the same percentage as the progress bar
                         transform: 'translateX(-50%)', // Center the indicator on the progress bar

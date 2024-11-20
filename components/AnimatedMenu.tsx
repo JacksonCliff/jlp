@@ -3,8 +3,17 @@ import { motion } from "framer-motion";
 import {navSections} from "../Constant/UIDatas";
 import AppText from "./AppText";
 import { RxCross1 } from "react-icons/rx";
-import 'react-responsive-modal/styles.css';
-import { Modal } from 'react-responsive-modal';
+import {
+    Modal ,
+    ModalContent,
+    useDisclosure
+} from "@nextui-org/modal";
+import {FaBars} from "react-icons/fa6";
+import Image from "next/image";
+
+
+
+
 
 interface AnimatedMenuProps {
     sectionRefs: MutableRefObject<(HTMLElement | null)[]>; // Correct typing for useRef
@@ -16,15 +25,16 @@ interface handleScrollProps {
     (htmlRef : HTMLElement | null, sectionId : string) : void
 }
 
-const AnimatedMenu = ({sectionRefs,openModal,toggleFun} : AnimatedMenuProps) => {
+const AnimatedMenu = ({sectionRefs,toggleFun} : AnimatedMenuProps) => {
 
     const [startAnimation,setStartAnimation] = useState(false);
     const [activeSection, setActiveSection] = useState("section1");
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     const handleClose = () => {
         setStartAnimation(false);
         setTimeout(() => {
-            toggleFun();
+            onOpenChange();
         },500)
     }
 
@@ -35,59 +45,71 @@ const AnimatedMenu = ({sectionRefs,openModal,toggleFun} : AnimatedMenuProps) => 
             if(htmlRef){
                 htmlRef.scrollIntoView({ behavior: "smooth" });
             }
-            toggleFun();
+            onOpenChange();
         },1000)
     };
 
     {/* Animates Mobile Menu from the side after a delay */}
     useEffect(() => {
-        if(openModal){
+        if(isOpen){
             setTimeout(() => {
                 setStartAnimation(true)
             },500)
             return
         }
         setStartAnimation(false)
-    },[openModal])
+    },[isOpen])
 
     return (
-                <Modal open={openModal} onClose={() => console.log("Do Nothing")} center>
-                    <div>
-                        <motion.div
-                            initial={ {x : "-100%"} }
-                            animate={ {x : startAnimation ? 0 : "-100%"} }
-                            transition={ {type : "tween" , duration : 0.3} }
-                            className="absolute top-0 left-0 w-3/4 h-screen z-15"
-                        >
-                            <div className="w-full h-full flex flex-row items-start">
-                                <aside
-                                    className="w-full h-screen bg-black bg-opacity-90 p-4 z-10 flex flex-col">
-                                    <nav className="flex flex-col text-center">
-                                        { navSections.map((nav , index) => {
-                                            return (
-                                                <button key={ nav.sectionId } className="" onClick={ () => handleScroll(sectionRefs.current[index],nav.sectionId) }>
-                                                    <div
-                                                         className={`relative group flex items-center border-x border-y ${activeSection === nav.sectionId? "border-emerald-400" : "border-white"} border-solid p-3 mt-1 hover:border-emerald-400`}>
-                                                        <div className="relative  z-1">
-                                                            <AppText className={`${activeSection === nav.sectionId? "text-emerald-400" : "text-white"} hover:text-emerald-400`}>{ nav.section }</AppText>
-                                                        </div>
-                                                    </div>
-                                                </button>
+        <div className="block md:hidden fixed bg-black w-full flex items-center p-1 z-10">
+            <button onClick={onOpen}>
+                <FaBars size={30} color={"white"}/>
+            </button>
+            <Modal isOpen={isOpen} className="pt-8 bg-black bg-opacity-60">
+                <ModalContent>
+                    <motion.div
+                        initial={ {x : "-100%"} }
+                        animate={ {x : startAnimation ? 0 : "-100%"} }
+                        transition={ {type : "tween" , duration : 0.3} }
+                        className="absolute top-8 left-0 w-3/4 h-screen z-15"
+                    >
+                        <div className="w-full h-full flex flex-row items-start">
+                            <aside
+                                className="w-full h-screen bg-black bg-opacity-90 p-4 z-10 flex flex-col">
+                                <Image
+                                    src="/image/logo.png"
+                                    alt="sidebar-logo"
+                                    width={ 150 } // Set the width here
+                                    height={ 150 } // Set the height here
+                                    className="rounded-full-lg shadow-lg self-center"
+                                />
+                                <nav className="flex flex-col text-center">
+                                    { navSections.map((nav , index) => {
+                                        return (
+                                            <button
+                                                key={ nav.sectionId }
+                                                className={`relative group flex items-center border-x border-y ${
+                                                    activeSection === nav.sectionId ? "border-emerald-400 text-emerald-400" : "border-white text-white"
+                                                } border-solid p-3 mt-1 hover:border-emerald-400 hover:text-emerald-400`}
+                                                onClick={ () => handleScroll(sectionRefs.current[index],nav.sectionId) }
+                                            >
 
-                                            )
-                                        }) }
-                                    </nav>
-                                </aside>
-                                <button onClick={handleClose} className="hover:animate-rotateOnce">
-                                    <RxCross1 size={ 25 } color={ "white" } className="m-3"/>
-                                </button>
-                            </div>
+                                                <AppText className="inherit">{ nav.section }</AppText>
+                                            </button>
 
-                        </motion.div>
+                                        )
+                                    }) }
+                                </nav>
+                            </aside>
+                            <button onClick={handleClose} className="hover:animate-rotateOnce m-1">
+                                <RxCross1 size={ 25 } color={ "white" } className="m-1"/>
+                            </button>
+                        </div>
 
-                    </div>
-
-                </Modal>
+                    </motion.div>
+                </ModalContent>
+            </Modal>
+        </div>
 
 
     );
