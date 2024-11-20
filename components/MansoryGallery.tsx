@@ -4,7 +4,6 @@ import React , { useCallback, useEffect, useState} from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from "react-responsive-carousel";
 import Image from "next/image";
-import { FaArrowLeft , FaArrowRight } from "react-icons/fa6";
 
 
 import {
@@ -12,76 +11,73 @@ import {
     ModalContent,
     useDisclosure
 } from "@nextui-org/modal";
-import {
-    StackedCarousel,
-    ResponsiveContainer,
-} from "react-stacked-center-carousel";
+
 import {RxCross1} from "react-icons/rx";
 
 // eslint-disable-next-line react/display-name
-export const Card = React.memo(function (props) {
-    const { data, dataIndex } = props;
-    const { cover } = data[dataIndex];
-    return (
-        <div
-            style={{
-                width: "100%",
-                height: 300,
-                userSelect: "none",
-            }}
-            className="my-slide-component"
-        >
-            <Image
-                fill={true}
-                src={cover}
-                alt={"test"}
-            />
-        </div>
-    );
-});
-
-export const data = [
-    {
-        cover: "/image/homeBg.webp",
-        title: "Intersteller",
-    },
-    {
-        cover: "/image/homeBg.webp",
-        title: "Inception",
-    },
-    {
-        cover: "/image/homeBg2.webp",
-        title: "Blade Runner 2049",
-    },
-    {
-        cover: "/image/homeBg3.webp",
-        title: "Icon man 3",
-    },
-    {
-        cover: "/image/homeBg4.webp",
-        title: "Venom",
-    },
-    {
-        cover: "/image/homeBg5.webp",
-        title: "Steins Gate",
-    },
-    {
-        cover: "/image/homeBg6.webp",
-        title: "One Punch Man",
-    },
-    {
-        cover: "/image/homeBg7.webp",
-        title: "A Silent Voice",
-    },
-    {
-        cover: "/image/homeBg8.webp",
-        title: "Demon Slayer",
-    },
-    {
-        cover: "/image/homeBg9.webp",
-        title: "Attack On Titan",
-    },
-];
+// export const Card = React.memo(function (props) {
+//     const { data, dataIndex } = props;
+//     const { cover } = data[dataIndex];
+//     return (
+//         <div
+//             style={{
+//                 width: "100%",
+//                 height: 300,
+//                 userSelect: "none",
+//             }}
+//             className="my-slide-component"
+//         >
+//             <Image
+//                 fill={true}
+//                 src={cover}
+//                 alt={"test"}
+//             />
+//         </div>
+//     );
+// });
+//
+// export const data = [
+//     {
+//         cover: "/image/homeBg.webp",
+//         title: "Intersteller",
+//     },
+//     {
+//         cover: "/image/homeBg.webp",
+//         title: "Inception",
+//     },
+//     {
+//         cover: "/image/homeBg2.webp",
+//         title: "Blade Runner 2049",
+//     },
+//     {
+//         cover: "/image/homeBg3.webp",
+//         title: "Icon man 3",
+//     },
+//     {
+//         cover: "/image/homeBg4.webp",
+//         title: "Venom",
+//     },
+//     {
+//         cover: "/image/homeBg5.webp",
+//         title: "Steins Gate",
+//     },
+//     {
+//         cover: "/image/homeBg6.webp",
+//         title: "One Punch Man",
+//     },
+//     {
+//         cover: "/image/homeBg7.webp",
+//         title: "A Silent Voice",
+//     },
+//     {
+//         cover: "/image/homeBg8.webp",
+//         title: "Demon Slayer",
+//     },
+//     {
+//         cover: "/image/homeBg9.webp",
+//         title: "Attack On Titan",
+//     },
+// ];
 
 export const photos = [
     {
@@ -147,7 +143,6 @@ export default function MansoryGallery() {
 
     const [selectedImgIndex, setSelectedImgIndex] = useState(0);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
-    const ref = React.useRef();
 
 
 
