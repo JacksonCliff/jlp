@@ -18,15 +18,8 @@ export default function Restaurant() {
 
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     const [areRefsReady, setRefsReady] = useState(false);
-    const [openMenuModal,setOpenMenuModal] = useState(false);
 
-    const handleMenuClick = () => {
-        if(openMenuModal){
-            setOpenMenuModal(false)
-            return
-        }
-        setOpenMenuModal(true)
-    }
+
 
     useEffect(() => {
         // When the sections are mounted, mark the refs as ready
@@ -45,7 +38,7 @@ export default function Restaurant() {
 
 
             {/*     Section with Background Image */ }
-            <AnimatedMenu sectionRefs={sectionRefs} openModal={openMenuModal} toggleFun={handleMenuClick}/>
+            <AnimatedMenu sectionRefs={sectionRefs}/>
 
             <section id={navSections[0].sectionId} ref={(el) => {sectionRefs.current[0] = el}}>
                 <CustomSlider className="relative z-1"/>
