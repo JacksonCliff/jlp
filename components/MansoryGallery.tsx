@@ -43,7 +43,7 @@ export const Card = React.memo(function (props) {
 export const data = [
     {
         cover: "/image/homeBg.webp",
-        title: "Interstaller",
+        title: "Intersteller",
     },
     {
         cover: "/image/homeBg.webp",
@@ -190,52 +190,25 @@ export default function MansoryGallery() {
         <div>
             {
                 width < 760? (
-                    <div style={{ width: "100%", position: "relative" }}>
-                        <ResponsiveContainer
-                            carouselRef={ref}
-                            render={(parentWidth, carouselRef) => {
-                                // If you want to use a ref to call the method of StackedCarousel, you cannot set the ref directly on the carousel component
-                                // This is because ResponsiveContainer will not render the carousel before its parent's width is determined
-                                // parentWidth is determined after your parent component mounts. Thus if you set the ref directly it will not work since the carousel is not rendered
-                                // Thus you need to pass your ref object to the ResponsiveContainer as the carouselRef prop and in your render function you will receive this ref object
-                                let currentVisibleSlide = 5;
-                                if (parentWidth <= 1440) currentVisibleSlide = 3;
-                                if (parentWidth <= 1080) currentVisibleSlide = 1;
-                                return (
-                                    <StackedCarousel
-                                        ref={carouselRef}
-                                        slideComponent={Card}
-                                        slideWidth={parentWidth < 800 ? parentWidth - 40 : 750}
-                                        carouselWidth={parentWidth}
-                                        data={data}
-                                        currentVisibleSlide={currentVisibleSlide}
-                                        maxVisibleSlide={5}
-                                        useGrabCursor
-                                    />
-                                );
-                            }}
-                        />
-                        <>
-                            <button
-                                style={{ position: "absolute", top: "40%", left: 10, zIndex: 10 }}
-                                color="primary"
-                                onClick={() => {
-                                    ref.current?.goBack();
-                                }}
-                            >
-                                <FaArrowLeft />
-                            </button>
-                            <button
-                                style={{ position: "absolute", top: "40%", right: 10, zIndex: 10 }}
-                                color="primary"
-                                onClick={() => {
-                                    ref.current?.goNext(6);
-                                }}
-                            >
-                                <FaArrowRight />
-                            </button>
-                        </>
-                    </div>
+                    <Carousel
+                        width={width * 0.8}
+                        dynamicHeight={true}
+                        selectedItem={selectedImgIndex}
+                        showThumbs={false}
+                        className={"cusCarousel"}
+                        infiniteLoop={true}
+                    >
+
+                        {photos.map((each) => {
+                            return(
+                                <div key={each.src} className="w-full relative pt-[70%]">
+                                    <Image key={each.src} src={each.src} alt={"test"} fill={true}/>
+
+                                </div>
+
+                            )
+                        })}
+                    </Carousel>
                 ) : (
                     <Gallery
                         photos={photos}
