@@ -13,6 +13,12 @@ const config: Config = {
         foreground: "var(--foreground)",
         customRed: '#b80b0b',
       },
+      fontFamily: {
+        curly: ['var(--font-dancing)'],
+        vibe: ['var(--font-great-vibes)'],
+        pacifico: ['var(--font-pacifico)'],
+
+      },
       inset: {
         '112': '28rem',
         '136': '34rem'
