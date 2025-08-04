@@ -1,37 +1,19 @@
 'use client';
 
-import Image from "next/image";
-import {useEffect, useRef, useState} from "react";
-import SideNavBar from "../components/SideNavBar";
-import {foodCards, foodDetails, navSections, pizzas, wholeMenu} from "../Constant/UIDatas";
-import CustomSlider from "../components/CustomSlider";
-import Tilt from 'react-parallax-tilt';
-import ProgressBar from "../components/ProgressBar";
-import MansoryGallery from "../components/MansoryGallery";
-import {FaCaretRight} from "react-icons/fa6"
-import AppText from "../components/AppText";
-import AnimatedMenu from "../components/AnimatedMenu";
-import CategoryBox from "../components/CategoryBox";
-import SearchBarWithSuggestions from "../components/SearchBarWithSuggestions";
-import FoodDetailsBox from "../components/FoodDetailsBox";
-import RomanticEnvelope from "@/components/RomanticEnvelop";
-import { confession } from "../Constant/UIDatas";
-import {temObj} from "../Constant/UIDatas";
 import RomanticEnvelopeWrapper from "@/components/EnvelopWrapper";
 import FloatingHearts from "@/components/FloatingHeart";
 
 export default function Restaurant() {
 
-    const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     // const [areRefsReady, sectionRefsetRefsReady] = useState(false);
-    const [searchBarData,setSearchBarData] = useState(wholeMenu);
-    const [showSuggestions,setShowSuggestions] = useState(false);
-    const [details,setDetails] = useState(foodDetails[0]);
+    // const [searchBarData,setSearchBarData] = useState(wholeMenu);
+    // const [showSuggestions,setShowSuggestions] = useState(false);
+    // const [details,setDetails] = useState(foodDetails[0]);
 
-    const middleFun = (dataId  : number) => {
-        setSearchBarData(foodCards[dataId].searchData);
-        setShowSuggestions(true);
-    }
+    // const middleFun = (dataId  : number) => {
+    //     setSearchBarData(foodCards[dataId].searchData);
+    //     setShowSuggestions(true);
+    // }
 
 
     // useEffect(() => {
