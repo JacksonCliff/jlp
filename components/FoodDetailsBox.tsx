@@ -26,7 +26,7 @@ const FoodDetailsBox: React.FC<FoodDetailsBoxProps> = ({ id, name, image, allerg
                     <h2 className="text-lg font-semibold mb-3 text-black">Ingredients</h2>
                     <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                         {ingredients.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index + id}>{item}</li>
                         ))}
                     </ul>
                 </div>
