@@ -1,3 +1,12 @@
+export default function Page() {
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Home</h1>
+      <p>Your app/page.tsx is working.</p>
+    </main>
+  );
+}
+
 // 'use client';
 
 // import InvitationLetter from "@/components/Wedding/Components/InvitationLetter";
