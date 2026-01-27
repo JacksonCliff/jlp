@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 
 type Swatch = { name: string; hex: string };
 
