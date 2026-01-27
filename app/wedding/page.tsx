@@ -5,7 +5,7 @@ import LaceInviteSection from "@/components/Wedding/Components/FromMainPage/Lace
 import RsvpSection from "@/components/Wedding/Components/FromMainPage/RsvpSection";
 import StorySection from "@/components/Wedding/Components/FromMainPage/Story";
 import WhiteTextBubble from "@/components/Wedding/Components/FromMainPage/WhiteTextBubble";
-import { sliderImages, weddingImages } from "@/Constant/UIDatas";
+import {  weddingImages } from "@/Constant/UIDatas";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
