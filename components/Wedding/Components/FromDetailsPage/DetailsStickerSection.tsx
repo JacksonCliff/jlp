@@ -13,7 +13,6 @@ type Props = {
 
   title?: string;            // "The Details"
   cta?: string;              // "CLICK HERE"
-  onClick?: () => void;      // optional click handler for the petal
 };
 
 export default function DetailsStickerSection({
@@ -23,7 +22,6 @@ export default function DetailsStickerSection({
   photo2Src = weddingImages.hall2,
   title = "The Details",
   cta = "CLICK HERE",
-  onClick,
 }: Props) {
   const router = useRouter();
 
