@@ -1,21 +1,21 @@
 import "./globals.css";
-import { Open_Sans , Ubuntu ,Playball} from 'next/font/google';
+import { Open_Sans, Ubuntu, Playball, Dancing_Script, Monsieur_La_Doulaise, Great_Vibes, Pacifico } from "next/font/google";
 
-import { Dancing_Script } from 'next/font/google';
-import { Monsieur_La_Doulaise } from "next/font/google";
-import { Great_Vibes } from "next/font/google";
+export const metadata = {
+  title: "Romantic Letter",
+};
 
-export const greatVibes = Great_Vibes({
+const greatVibes = Great_Vibes({
   weight: "400",
   subsets: ["latin"],
-  variable: '--font-great-vibes'
-});
-const dancing = Dancing_Script({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-dancing',
+  variable: "--font-great-vibes",
 });
 
+const dancing = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-dancing",
+});
 
 const monsieur = Monsieur_La_Doulaise({
   subsets: ["latin"],
@@ -23,23 +23,11 @@ const monsieur = Monsieur_La_Doulaise({
   variable: "--font-monsieur",
 });
 
-
-import { Pacifico } from 'next/font/google';
-
-
-
-export const metadata = {
-  title: 'Romantic Letter',
-};
-
-
-
 const pacifico = Pacifico({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-pacifico',
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pacifico",
 });
-
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -48,25 +36,20 @@ const openSans = Open_Sans({
 });
 
 const ubuntu = Ubuntu({
-    subsets: ["latin"],
-    variable: "--font-ubuntu",
-    weight : "400"
-
+  subsets: ["latin"],
+  variable: "--font-ubuntu",
+  weight: "400",
 });
 
 const playBall = Playball({
-    subsets: ["latin"],
-    variable: "--font-playBall",
-    weight : "400"
-})
-
-
+  subsets: ["latin"],
+  variable: "--font-playBall",
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
