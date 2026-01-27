@@ -1,23 +1,16 @@
-export default function Page() {
+
+
+'use client';
+
+import InvitationLetter from "@/components/Wedding/Components/InvitationLetter";
+
+export default function MainPage() {
   return (
-    <main style={{ padding: 24 }}>
-      <h1>Home</h1>
-      <p>Your app/page.tsx is working.</p>
-    </main>
-  );
+        <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
+            <InvitationLetter/>
+        </div>
+  )
 }
-
-// 'use client';
-
-// import InvitationLetter from "@/components/Wedding/Components/InvitationLetter";
-
-// // export default function MainPage() {
-// //   return (
-// //         <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
-// //             <InvitationLetter/>
-// //         </div>
-// //   )
-// // }
 
 // // "use client";
 
