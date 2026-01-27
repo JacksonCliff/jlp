@@ -211,3 +211,29 @@ body {
     opacity: 0;
   }
 }
+
+.font-greatvibes {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+@layer utilities {
+  .font-dancing {
+    font-family: var(--font-dancing), cursive;
+  }
+}
+
+@keyframes slowPanZoom {
+  0% {
+    transform: scale(1);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scale(1.04);
+    transform-origin: right center;
+  }
+}
+
+.animate-slow-pan {
+  animation: slowPanZoom 1.5s ease-out forwards;
+}
+

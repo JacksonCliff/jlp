@@ -6,6 +6,39 @@ export const navSections = [
     {id : 5,section : "Contact Us", sectionId : "section5"},
 ]
 
+export const weddingImages = {
+    envelop : '/image/wedding/envelop.png',
+    couple : '/image/wedding/coupleBg.png',
+    couple2 : '/image/wedding/coupleBg2.jpg',
+    frame : '/image/wedding/weddingFrame.svg',
+    frame2 : '/image/wedding/weddingFrame2.svg',
+    hall  : '/image/wedding/hall.jpg',
+    hall2 : '/image/wedding/hall2.jpg',
+    hall3 : '/image/wedding/hall3.jpg',
+    hall4 : '/image/wedding/hall4.jpg',
+    floral : '/image/wedding/floral.svg',
+    floral2 : '/image/wedding/floral.png',
+    floral3 : '/image/wedding/floral3.svg',
+
+    oval : '/image/wedding/oval.svg',
+    oval2 : '/image/wedding/oval2.png',
+    story : '/image/wedding/story.svg',
+    story2 : '/image/wedding/story2.svg',
+    story3 : '/image/wedding/story3.png',
+    story4 : '/image/wedding/story4.svg',
+    story5 : '/image/wedding/story5.png',
+
+
+
+
+
+
+
+
+
+
+}
+
 export const confession = `You brought happiness into my life even before I knew the meaning behind your beautiful name.
 
 After reading this, you might feel a little surprised or uncomfortable — and I’m sorry if you do. But just this once, allow me to be selfish and express what I’ve been keeping to myself.
