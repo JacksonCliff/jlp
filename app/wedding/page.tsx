@@ -1,7 +1,7 @@
 "use client";
 
 import DetailsStickerSection from "@/components/Wedding/Components/FromDetailsPage/DetailsStickerSection";
-import LaceInviteSection from "@/components/Wedding/Components/FromMainPage/LaceInvite";
+import LaceInviteSection from "@/components/Wedding/Components/LaceInvite";
 import RsvpSection from "@/components/Wedding/Components/FromMainPage/RsvpSection";
 import StorySection from "@/components/Wedding/Components/FromMainPage/Story";
 import WhiteTextBubble from "@/components/Wedding/Components/FromMainPage/WhiteTextBubble";
