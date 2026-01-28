@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { weddingImages } from "@/Constant/UIDatas";
 
 type Props = {
   ornamentSrc?: string; // small flourish svg/png
 };
 
 export default function DirectionsSection({
-  ornamentSrc = weddingImages.frame, // put your icon path here
+  ornamentSrc = '/image/wedding/weddingFrame.svg', // put your icon path here
 }: Props) {
   return (
     <main className="relative min-h-screen w-full overflow-hidden text-[#f3e7df] px-6 py-14">

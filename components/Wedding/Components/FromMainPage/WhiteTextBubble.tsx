@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { weddingImages } from "@/Constant/UIDatas";
 
 export default function WhiteTextBubble({
   title = "Thu and Baktykan",
@@ -18,7 +17,7 @@ export default function WhiteTextBubble({
       {/* 🖼 Background Image */}
       <div className="absolute inset-0 animate-slow-pan will-change-transform">
         <Image
-          src={weddingImages.couple}
+          src="/image/wedding/coupleBg.png"
           alt="Wedding background"
           fill
           priority

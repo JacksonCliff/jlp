@@ -5,7 +5,6 @@ import LaceInviteSection from "@/components/Wedding/Components/FromMainPage/Lace
 import RsvpSection from "@/components/Wedding/Components/FromMainPage/RsvpSection";
 import StorySection from "@/components/Wedding/Components/FromMainPage/Story";
 import WhiteTextBubble from "@/components/Wedding/Components/FromMainPage/WhiteTextBubble";
-import {  weddingImages } from "@/Constant/UIDatas";
 
 
 
@@ -23,16 +22,16 @@ export default function InviteScrollPage() {
 
        <section className="relative min-h-[100svh] w-full overflow-hidden">
            <LaceInviteSection
-            photoSrc={weddingImages.couple2}
-            frameSrc={weddingImages.frame}
+            photoSrc='/image/wedding/coupleBg2.jpg'
+            frameSrc='/image/wedding/weddingFrame.svg'
             dateLine="15 | 08 | 2026 • DUBAI, UAE"
           />
       </section>
 
       <section className="relative min-h-[100svh] w-full overflow-hidden">
            <RsvpSection
-             bgSrc={weddingImages.hall3}
-             cardSrc={weddingImages.envelop}
+             bgSrc='/image/wedding/hall3.jpg'
+             cardSrc='/image/wedding/envelop.png'
            />
       </section>
 
