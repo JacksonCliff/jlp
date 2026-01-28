@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { weddingImages } from "@/Constant/UIDatas";
 
 export default function Home() {
   const router = useRouter();
@@ -79,7 +78,7 @@ export default function Home() {
             ].join(" ")}
           >
             <Image
-              src={weddingImages.envelop}
+              src="/image/Wedding/envelop.png"
               alt="Envelope"
               width={370}
               height={210}
