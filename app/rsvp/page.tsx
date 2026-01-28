@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { weddingImages } from "@/Constant/UIDatas";
 
 export default function RsvpLanding() {
   return (
@@ -24,7 +25,7 @@ export default function RsvpLanding() {
         {/* Decorative Divider */}
         <div className="flex justify-center my-4 opacity-80">
           <Image
-            src='/image/wedding/weddingFrame.svg'  // small flourish svg
+            src={weddingImages.frame}   // small flourish svg
             alt="Ornament"
             width={90}
             height={24}

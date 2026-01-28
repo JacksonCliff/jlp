@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { weddingImages } from "@/Constant/UIDatas";
 import TimelineSection from "@/components/Wedding/Components/FromDetailsPage/TimeLine";
 import DirectionsSection from "@/components/Wedding/Components/FromDetailsPage/Direction";
 import WhereToStaySection from "@/components/Wedding/Components/FromDetailsPage/WhereToStay";
 import OtherDetailsSection from "@/components/Wedding/Components/FromDetailsPage/OtherDetails";
 
 export default function DetailsPage() {
-  const titleBgSrc = '/image/wedding/hall2.jpg'; // ✅ keep it here
+  const titleBgSrc = weddingImages.hall2; // ✅ keep it here
 
   const pageRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);

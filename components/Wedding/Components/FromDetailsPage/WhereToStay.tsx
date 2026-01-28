@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { weddingImages } from "@/Constant/UIDatas";
 
 type Hotel = {
   iconSrc?: string;
@@ -16,7 +17,7 @@ type Props = {
 };
 
 export default function WhereToStaySection({
-  hotelIconSrc = '/image/wedding/weddingFrame.svg', // set this in your UIDatas
+  hotelIconSrc = weddingImages.frame, // set this in your UIDatas
 }: Props) {
   const hotels: Hotel[] = [
     {

@@ -1,5 +1,6 @@
 "use client";
 
+import { weddingImages } from "@/Constant/UIDatas";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -15,10 +16,10 @@ type Props = {
 };
 
 export default function DetailsStickerSection({
-  ringSvgSrc = '/image/wedding/oval.svg',
-  petalSrc = '/image/wedding/floral3.svg',
-  photo1Src = '/image/wedding/hall.jpg',
-  photo2Src = '/image/wedding/hall2.jpg',
+  ringSvgSrc = weddingImages.oval,
+  petalSrc = weddingImages.floral3,
+  photo1Src = weddingImages.hall,
+  photo2Src = weddingImages.hall2,
   title = "The Details",
   cta = "CLICK HERE",
 }: Props) {

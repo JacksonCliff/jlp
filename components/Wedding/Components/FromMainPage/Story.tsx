@@ -1,5 +1,6 @@
 "use client";
 
+import { weddingImages } from "@/Constant/UIDatas";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -13,9 +14,9 @@ type Props = {
 };
 
 export default function StorySection({
-  bgSrc = "/image/wedding/hall2.jpg",
-  cardSrc = "/image/wedding/story3.png",
-  iconSrc = "/image/wedding/story4.svg",
+  bgSrc = weddingImages.hall2,
+  cardSrc = weddingImages.story3,
+  iconSrc = weddingImages.story4,
   topText = "Our",
   topText2 = "Story",
   bottomText = "CLICK HERE",
